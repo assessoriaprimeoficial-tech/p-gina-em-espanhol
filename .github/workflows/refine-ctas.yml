@@ -1,0 +1,40 @@
+name: Refina CTAs da página
+on:
+  push:
+    paths:
+      - .github/workflows/refine-ctas.yml
+permissions:
+  contents: write
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Atualizar CTAs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('src/components/upsell/TuGemeloDigitalPage.tsx')
+          s = p.read_text()
+          old = [
+            '<CTA href="#combo" />', '<CTA />', '<CTA />', '<CTA />', '<CTA />', '<CTA />', '<CTA />', '<CTA />', '<CTA />', '<CTA />', '<CTA href="#combo">QUIERO EL COMBO</CTA>', '<CTA />', '<CTA />'
+          ]
+          new = [
+            '<CTA href="#combo">QUIERO EL COMBO</CTA>', '<CTA>QUIERO ACCEDER</CTA>', '<CTA>LO QUIERO YA</CTA>', '<CTA>QUIERO EMPEZAR</CTA>', '<CTA>QUIERO MI ACCESO</CTA>', '<CTA>SÍ, LO QUIERO</CTA>', '<CTA>QUIERO APROVECHAR</CTA>', '<CTA>QUIERO EL COMBO</CTA>', '<CTA>QUIERO ACCEDER</CTA>', '<CTA>QUIERO LAS 4 GUÍAS</CTA>', '<CTA href="#combo">QUIERO EL COMBO</CTA>', '<CTA>LO QUIERO YA</CTA>', '<CTA>QUIERO EMPEZAR</CTA>'
+          ]
+          pos = 0
+          for i, target in enumerate(old):
+            idx = s.find(target, pos)
+            if idx < 0:
+              raise SystemExit(f'CTA não encontrado na posição {i+1}: {target}')
+            s = s[:idx] + new[i] + s[idx+len(target):]
+            pos = idx + len(new[i])
+          p.write_text(s)
+          PY
+      - name: Commitar alterações
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/components/upsell/TuGemeloDigitalPage.tsx
+          git commit -m 'Varia CTAs da página para melhorar conversão no mobile' || exit 0
+          git push
