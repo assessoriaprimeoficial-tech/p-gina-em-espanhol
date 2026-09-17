@@ -1,0 +1,16 @@
+name: Inspect page before structural edit
+on:
+  workflow_dispatch:
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect checkout links and package
+        run: |
+          echo '--- checkout-like URLs ---'
+          grep -RhoE 'https?://[^"'"'"' )]+' src/components/upsell/TuGemeloDigitalPage.tsx | sort -u || true
+          echo '--- hrefs ---'
+          grep -nE 'href=|checkout|hotmart|pay\.' src/components/upsell/TuGemeloDigitalPage.tsx | head -100 || true
+          echo '--- files ---'
+          find src -maxdepth 3 -type f | sort
