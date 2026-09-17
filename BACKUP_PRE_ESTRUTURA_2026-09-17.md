@@ -1,0 +1,1 @@
+Backup marker created before the structural reorganization requested on 2026-09-17. The protected backup branch is the authoritative rollback point.
