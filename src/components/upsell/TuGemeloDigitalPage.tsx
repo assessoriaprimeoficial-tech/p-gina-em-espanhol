@@ -144,7 +144,7 @@ function TituloSecao({ etiqueta, titulo, light = false, children }: { etiqueta: 
   </div>;
 }
 
-function CTA({ children = "QUERO COMEÇAR →", href = "#oferta" }: { children?: ReactNode; href?: string }) {
+function CTA({ children = "QUIERO EMPEZAR →", href = "#oferta" }: { children?: ReactNode; href?: string }) {
   return <a href={href} className="upsell-cta inline-flex w-full max-w-[380px] items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-6 py-4 text-center text-sm tracking-wide text-white uppercase sm:gap-3 sm:px-8 sm:text-base">{children}</a>;
 }
 
@@ -173,7 +173,7 @@ function NotificacoesVendas() {
   </div>;
 }
 
-function ProdutoIndividual({ id, cover, etiqueta, nome, titulo, texto, beneficios, light = false, icon: Icon, cta = "QUERO O MÉTODO →" }: {
+function ProdutoIndividual({ id, cover, etiqueta, nome, titulo, texto, beneficios, light = false, icon: Icon, cta = "QUIERO EL MÉTODO →" }: {
   id?: string; cover: { url: string }; etiqueta: string; nome: string; titulo: string; texto: ReactNode; beneficios: string[]; light?: boolean; icon: typeof Brain; cta?: string;
 }) {
   return <section id={id} className={light ? "bg-upsell-light px-5 py-12 sm:px-6 sm:py-16" : "border-y border-white/10 bg-white/[0.02] px-5 py-12 sm:px-6 sm:py-16"}>
@@ -222,7 +222,7 @@ export function TuGemeloDigitalPage() {
           <div className="relative mx-auto w-full max-w-[420px]">
             <div className="pointer-events-none absolute inset-8 rounded-full bg-upsell-blue/20 blur-[100px]" />
             <img src={comboCover.url} alt="Método Mente Expandida completo con los cuatro materiales" className="relative w-full rounded-[32px] object-cover shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]" />
-            <div className="mt-6 flex justify-center"><CTA>QUERO COMEÇAR →</CTA></div>
+            <div className="mt-6 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
             <p className="mt-3 text-center text-xs font-semibold text-white/55">US$ 9,90 · Pago único · Acceso inmediato</p>
           </div>
         </div>
@@ -242,7 +242,7 @@ export function TuGemeloDigitalPage() {
             [elEspejoDigitalCover, "El Espejo Digital", "Bono", "Una nueva perspectiva sobre ti."],
           ].map(([cover, nome, tag, desc]) => <article key={nome as string} className={`rounded-[26px] border p-4 text-center ${tag === "Bono" ? "border-upsell-gold/40 bg-upsell-gold/[0.08]" : "border-upsell-light-border bg-upsell-light-surface"}`}><img src={(cover as {url:string}).url} alt={`Portada ${nome}`} className="mx-auto aspect-square w-full max-w-[190px] rounded-[18px] object-cover" /><div className={`upsell-eyebrow mt-4 text-[10px] tracking-[0.18em] uppercase ${tag === "Bono" ? "text-upsell-gold" : "text-upsell-light-blue"}`}>{tag}</div><h3 className="mt-2 text-lg font-bold text-upsell-light-text">{nome}</h3><p className="mt-1 text-sm leading-6 text-upsell-light-muted">{desc}</p></article>)}
         </div>
-        <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
+        <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
       </div>
     </section>
 
@@ -253,10 +253,10 @@ export function TuGemeloDigitalPage() {
       </div>
     </section>
 
-    <ProdutoIndividual id="tu-mente-en-gpt" cover={tuMenteEnGPTCover} etiqueta="01 · BASE DEL MÉTODO" nome="Tu Mente en GPT" titulo="Una inteligencia que entiende mejor tu contexto." texto={<>La guía te ayuda a pasar de conversaciones genéricas a una experiencia más alineada con tu identidad, objetivos y forma de comunicarte. El objetivo es que puedas trabajar con más contexto y reducir la necesidad de empezar de cero.</>} beneficios={beneficiosMente} icon={Brain} cta="QUERO O MÉTODO →" />
-    <ProdutoIndividual cover={tuSegundoCerebroCover} etiqueta="02 · CONTINUIDAD DEL MÉTODO" nome="Tu Segundo Cerebro" titulo="Organiza tus pensamientos y desarrolla tus ideas." texto={<>La segunda etapa está enfocada en transformar pensamientos dispersos en posibilidades más claras, analizar alternativas y convertir objetivos en acciones concretas para avanzar con mayor claridad.</>} beneficios={beneficiosSegundo} light icon={Lightbulb} cta="QUERO O MÉTODO →" />
-    <ProdutoIndividual cover={tuGemeloDigitalCover} etiqueta="03 · PRESENCIA DIGITAL" nome="Tu Gemelo Digital" titulo="Transforma ideas en contenido y presencia." texto={<>Esta etapa lleva tus ideas al formato audiovisual de una manera más sencilla. Está pensada para ayudarte a producir contenido con más constancia, incluso si tienes poco tiempo o estás empezando.</>} beneficios={beneficiosGemelo} icon={Video} cta="QUERO O MÉTODO →" />
-    <ProdutoIndividual cover={elEspejoDigitalCover} etiqueta="04 · BONO ESPECIAL" nome="El Espejo Digital" titulo="Una nueva perspectiva sobre tus patrones y decisiones." texto={<>Como bono de la oferta, encuentras una experiencia de reflexión guiada que puede ayudarte a observar patrones presentes en tus conversaciones, reconocer fortalezas y descubrir nuevas perspectivas.</>} beneficios={beneficiosEspejo} light icon={Eye} cta="QUERO O MÉTODO →" />
+    <ProdutoIndividual id="tu-mente-en-gpt" cover={tuMenteEnGPTCover} etiqueta="01 · BASE DEL MÉTODO" nome="Tu Mente en GPT" titulo="Una inteligencia que entiende mejor tu contexto." texto={<>La guía te ayuda a pasar de conversaciones genéricas a una experiencia más alineada con tu identidad, objetivos y forma de comunicarte. El objetivo es que puedas trabajar con más contexto y reducir la necesidad de empezar de cero.</>} beneficios={beneficiosMente} icon={Brain} cta="QUIERO EL MÉTODO →" />
+    <ProdutoIndividual cover={tuSegundoCerebroCover} etiqueta="02 · CONTINUIDAD DEL MÉTODO" nome="Tu Segundo Cerebro" titulo="Organiza tus pensamientos y desarrolla tus ideas." texto={<>La segunda etapa está enfocada en transformar pensamientos dispersos en posibilidades más claras, analizar alternativas y convertir objetivos en acciones concretas para avanzar con mayor claridad.</>} beneficios={beneficiosSegundo} light icon={Lightbulb} cta="QUIERO EL MÉTODO →" />
+    <ProdutoIndividual cover={tuGemeloDigitalCover} etiqueta="03 · PRESENCIA DIGITAL" nome="Tu Gemelo Digital" titulo="Transforma ideas en contenido y presencia." texto={<>Esta etapa lleva tus ideas al formato audiovisual de una manera más sencilla. Está pensada para ayudarte a producir contenido con más constancia, incluso si tienes poco tiempo o estás empezando.</>} beneficios={beneficiosGemelo} icon={Video} cta="QUIERO EL MÉTODO →" />
+    <ProdutoIndividual cover={elEspejoDigitalCover} etiqueta="04 · BONO ESPECIAL" nome="El Espejo Digital" titulo="Una nueva perspectiva sobre tus patrones y decisiones." texto={<>Como bono de la oferta, encuentras una experiencia de reflexión guiada que puede ayudarte a observar patrones presentes en tus conversaciones, reconocer fortalezas y descubrir nuevas perspectivas.</>} beneficios={beneficiosEspejo} light icon={Eye} cta="QUIERO EL MÉTODO →" />
 
     <section className="relative overflow-hidden border-y border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-14">
       <MatrixRain />
@@ -265,13 +265,13 @@ export function TuGemeloDigitalPage() {
         <h2 className="mt-4 text-2xl font-bold text-white sm:text-4xl">De conocerte a ayudarte a pensar, crear y ver nuevas posibilidades.</h2>
         <div className="mt-8 grid gap-3 sm:grid-cols-4">
           {[
-            ["01", "LA IA CONOCE VOCÊ", Brain],
-            ["02", "AYUDA VOCÊ A PENSAR", Lightbulb],
+            ["01", "LA IA TE CONOCE", Brain],
+            ["02", "TE AYUDA A PENSAR", Lightbulb],
             ["03", "TRANSFORMA IDEAS EN PRESENCIA", Video],
-            ["04", "REVELA NOVAS PERSPECTIVAS", Eye],
+            ["04", "REVELA NUEVAS PERSPECTIVAS", Eye],
           ].map(([num, text, Icon]) => <div key={num as string} className="relative rounded-2xl border border-upsell-blue/25 bg-upsell-blue/[0.06] p-5"><div className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-upsell-blue/15 text-upsell-blue"><Icon className="h-5 w-5" /></div><div className="upsell-eyebrow mt-3 text-[10px] text-upsell-blue">{num}</div><p className="mt-2 text-xs font-bold leading-5 text-white">{text}</p></div>)}
         </div>
-        <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
+        <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
       </div>
     </section>
 
@@ -285,7 +285,7 @@ export function TuGemeloDigitalPage() {
             ["03", "Para principiantes", "Si ya utilizas ChatGPT, puedes comenzar aunque todavía estés aprendiendo sobre IA."],
           ].map(([num, title, text]) => <article key={num} className="rounded-[24px] border border-upsell-light-border bg-upsell-light-surface p-6 text-center"><div className="upsell-eyebrow text-xs text-upsell-light-blue">{num}</div><h3 className="mt-3 text-xl font-bold text-upsell-light-text">{title}</h3><p className="mt-2 text-sm leading-6 text-upsell-light-muted">{text}</p></article>)}
         </div>
-        <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
+        <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
       </div>
     </section>
 
@@ -301,15 +301,15 @@ export function TuGemeloDigitalPage() {
       <div className="relative mx-auto max-w-7xl text-center">
         <div className="mx-auto max-w-3xl">
           <div className="upsell-eyebrow mb-4 text-xs tracking-[0.28em] text-upsell-gold uppercase">MIRA EL MÉTODO COBRAR VIDA</div>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">Veja o método ganhar vida.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-upsell-text-muted sm:text-base">Conheça os materiais que fazem parte do Método Mente Expandida e visualize a experiência completa.</p>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">Mira el método cobrar vida.</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-upsell-text-muted sm:text-base">Conoce los materiales que forman parte del Método Mente Expandida y visualiza la experiencia completa.</p>
         </div>
         <div className="upsell-marquee-mask mt-8 overflow-hidden">
           <div className="upsell-marquee flex w-max items-center gap-5 px-5">
             {[...pilarImagens, ...pilarImagens, ...pilarImagens].map((cover, index) => <CapaCard key={index} cover={cover} nome="Método Mente Expandida" />)}
           </div>
         </div>
-        <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
+        <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
       </div>
     </section>
 
@@ -318,7 +318,7 @@ export function TuGemeloDigitalPage() {
         <TituloSecao light etiqueta="TESTIMONIOS" titulo={<>Personas que ya comenzaron a <span className="text-upsell-light-blue">aplicar el método.</span></>} />
       </div>
       <div className="upsell-marquee-mask mt-8 overflow-hidden"><div className="upsell-marquee-reverse flex w-max items-center gap-5 px-5">{[...depoimentos, ...depoimentos].map((item, index) => <DepoimentoCard key={index} imagem={item} index={index % depoimentos.length} />)}</div></div>
-      <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
+      <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
     </section>
 
     <section id="combo" className="relative border-y border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-16">
@@ -336,13 +336,12 @@ export function TuGemeloDigitalPage() {
             <div className="rounded-2xl border border-upsell-gold/30 bg-upsell-gold/[0.08] p-4"><p className="font-bold text-upsell-gold">El Espejo Digital · BONO</p><p className="mt-1 text-xs text-upsell-text-muted">Bono de reflexión guiada.</p></div>
           </div>
           <div className="mt-6 rounded-2xl border border-white/10 bg-black/30 p-5 sm:p-7">
-            <p className="upsell-eyebrow text-xs tracking-[0.22em] text-white/50 uppercase">Valor total del conjunto</p>
-            <p className="mt-1 text-3xl font-bold text-white line-through decoration-white/50 sm:text-4xl">US$ 37</p>
-            <p className="upsell-eyebrow mt-5 text-xs tracking-[0.22em] text-upsell-gold uppercase">Precio especial de lanzamiento</p>
+            <p className="text-sm text-white/55">Valor del método: <span className="font-bold text-white line-through">US$ 37</span></p>
+            <p className="upsell-eyebrow mt-4 text-xs tracking-[0.22em] text-upsell-gold uppercase">Precio especial de lanzamiento</p>
             <p className="mt-1 text-5xl font-bold text-upsell-gold sm:text-7xl">US$ 9,90</p>
-            <p className="mt-2 text-sm font-bold text-upsell-success">ECONOMIZE MAIS DE 70%</p>
-            <div className="mt-6 flex justify-center"><CTA>QUERO COMEÇAR →</CTA></div>
-            <p className="mt-3 text-xs font-semibold text-white/55">US$ 9,90 · Pago único · Acceso inmediato</p>
+            <p className="mt-2 text-sm font-bold text-upsell-success">AHORRA MÁS DE 70%</p>
+            <div className="mt-6 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
+            <p className="mt-3 text-xs font-semibold text-white/55">Pago único · Acceso inmediato</p>
           </div>
         </div>
       </div>
@@ -352,12 +351,12 @@ export function TuGemeloDigitalPage() {
       <div className="mx-auto max-w-4xl text-center">
         <div className="relative mx-auto grid h-48 w-48 place-items-center rounded-full border-2 border-upsell-success/50 bg-upsell-success/10 sm:h-56 sm:w-56"><div className="absolute inset-3 rounded-full border border-dashed border-upsell-success/40" /><div><BadgeCheck className="mx-auto h-9 w-9 text-upsell-success" /><div className="mt-1 text-6xl font-bold leading-none text-upsell-light-text">7</div><div className="upsell-eyebrow mt-1 text-xs tracking-[0.24em] text-upsell-light-text/70">DÍAS</div><div className="mt-2 text-[10px] font-bold tracking-[0.2em] text-upsell-success uppercase">Garantía total</div></div></div>
         <div className="mt-7"><div className="upsell-eyebrow text-xs tracking-[0.22em] text-upsell-success uppercase">GARANTÍA DE 7 DÍAS</div><h2 className="mt-3 text-3xl font-bold text-upsell-light-text sm:text-4xl">Conoce el método durante 7 días.</h2><p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-upsell-light-muted sm:text-base">Si decides que no es para ti, puedes solicitar la garantía dentro del plazo según las condiciones de la plataforma de compra.</p></div>
-        <div className="mt-7 flex justify-center"><CTA>QUERO COMEÇAR →</CTA></div>
+        <div className="mt-7 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
       </div>
     </section>
 
     <section className="bg-upsell-light px-5 py-12 sm:px-6 sm:py-14">
-      <div className="mx-auto max-w-4xl"><TituloSecao light etiqueta="PREGUNTAS FRECUENTES" titulo="El último paso antes de comenzar." /><div className="mt-8 space-y-3">{perguntas.map(([pergunta, resposta]) => <details key={pergunta} className="group rounded-2xl border border-upsell-light-border bg-upsell-light-surface p-5 open:border-upsell-light-blue/40"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-upsell-light-text"><span>{pergunta}</span><ChevronDown className="h-5 w-5 shrink-0 text-upsell-light-blue transition group-open:rotate-180" /></summary><p className="mt-4 pr-6 text-sm leading-7 text-upsell-light-muted sm:text-base">{resposta}</p></details>)}</div><div className="mt-8 flex justify-center"><CTA>QUERO COMEÇAR →</CTA></div></div>
+      <div className="mx-auto max-w-4xl"><TituloSecao light etiqueta="PREGUNTAS FRECUENTES" titulo="El último paso antes de comenzar." /><div className="mt-8 space-y-3">{perguntas.map(([pergunta, resposta]) => <details key={pergunta} className="group rounded-2xl border border-upsell-light-border bg-upsell-light-surface p-5 open:border-upsell-light-blue/40"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-upsell-light-text"><span>{pergunta}</span><ChevronDown className="h-5 w-5 shrink-0 text-upsell-light-blue transition group-open:rotate-180" /></summary><p className="mt-4 pr-6 text-sm leading-7 text-upsell-light-muted sm:text-base">{resposta}</p></details>)}</div><div className="mt-8 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div></div>
     </section>
 
     <NotificacoesVendas />
