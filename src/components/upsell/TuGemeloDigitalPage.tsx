@@ -235,7 +235,7 @@ export function TuGemeloDigitalPage() {
           </div>
           <div className="relative mx-auto w-full max-w-[420px]">
             <div className="mb-5 flex flex-wrap items-end justify-center gap-4">
-              <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Precio anterior</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 69,90</span></div>
+              <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Precio anterior</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 37</span></div>
               <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Precio de lanzamiento</span><span className="text-3xl font-bold text-upsell-success">US$ 9,99</span></div>
             </div>
             <div className="relative">
