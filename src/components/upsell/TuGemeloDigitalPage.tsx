@@ -156,14 +156,8 @@ function CTA({ children = "QUIERO EMPEZAR →", href = "#oferta" }: { children?:
 }
 
 function MetodoVisual() {
-  const capas = [
-    [tuMenteEnGPTCover, "Tu Mente en GPT"],
-    [tuSegundoCerebroCover, "Tu Segundo Cerebro"],
-    [tuGemeloDigitalCover, "Tu Gemelo Digital"],
-    [elEspejoDigitalCover, "El Espejo Digital"],
-  ] as const;
-  return <div className="relative grid grid-cols-2 gap-3 rounded-[28px] border border-upsell-blue/20 bg-white/[0.035] p-3 shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]">
-    {capas.map(([cover, nome]) => <img key={nome} src={cover.url} alt={`Portada ${nome}`} className="aspect-square w-full rounded-[20px] object-cover" />)}
+  return <div className="relative flex justify-center rounded-[28px] border border-upsell-blue/20 bg-white/[0.035] p-3 shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]">
+    <img src={comboCover.url} alt="Combo Método Mente Expandida con las 4 guías" className="w-full max-w-[340px] rounded-[24px] object-cover" />
   </div>;
 }
 
@@ -236,7 +230,7 @@ export function TuGemeloDigitalPage() {
           </div>
           <div className="relative mx-auto w-full max-w-[420px]">
             <div className="mb-5 flex flex-wrap items-end justify-center gap-4">
-              <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Preço normal</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 69,90</span></div>
+              <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Precio normal</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 69,90</span></div>
               <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Oferta por tiempo limitado</span><span className="text-3xl font-bold text-upsell-success">US$ 9,99</span></div>
             </div>
             <div className="relative">
