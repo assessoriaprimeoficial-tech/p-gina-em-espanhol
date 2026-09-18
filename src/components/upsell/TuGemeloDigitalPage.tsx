@@ -11,7 +11,6 @@ import depoimento12 from "@/assets/depoimento-12.png.asset.json";
 import depoimento13 from "@/assets/depoimento-13.png.asset.json";
 import depoimento14 from "@/assets/depoimento-14.png.asset.json";
 import depoimento15 from "@/assets/depoimento-15.png.asset.json";
-import comboCover from "@/assets/combo-mente-expandida-novo.png.asset.json";
 import metodoNovo39 from "@/assets/metodo-novo-39.png.asset.json";
 import metodoNovo40 from "@/assets/metodo-novo-40.png.asset.json";
 import metodoNovo41 from "@/assets/metodo-novo-41.png.asset.json";
@@ -148,6 +147,18 @@ function CTA({ children = "QUIERO EMPEZAR →", href = "#oferta" }: { children?:
   return <a href={href} className="upsell-cta inline-flex w-full max-w-[380px] items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-6 py-4 text-center text-sm tracking-wide text-white uppercase sm:gap-3 sm:px-8 sm:text-base">{children}</a>;
 }
 
+function MetodoVisual() {
+  const capas = [
+    [tuMenteEnGPTCover, "Tu Mente en GPT"],
+    [tuSegundoCerebroCover, "Tu Segundo Cerebro"],
+    [tuGemeloDigitalCover, "Tu Gemelo Digital"],
+    [elEspejoDigitalCover, "El Espejo Digital"],
+  ] as const;
+  return <div className="relative grid grid-cols-2 gap-3 rounded-[28px] border border-upsell-blue/20 bg-white/[0.035] p-3 shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]">
+    {capas.map(([cover, nome]) => <img key={nome} src={cover.url} alt={`Portada ${nome}`} className="aspect-square w-full rounded-[20px] object-cover" />)}
+  </div>;
+}
+
 function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) {
   return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Portada ${nome}`} className="h-[240px] w-full rounded-[18px] object-cover sm:h-[290px]" /></div>;
 }
@@ -216,11 +227,13 @@ export function TuGemeloDigitalPage() {
             
           </div>
           <div className="relative mx-auto w-full max-w-[420px]">
-            <div className="pointer-events-none absolute inset-8 rounded-full bg-upsell-blue/20 blur-[100px]" />
-            <img src={comboCover.url} alt="Método Mente Expandida completo con los cuatro materiales" className="relative w-full rounded-[32px] object-cover shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]" />
-            <div className="mt-5 flex flex-wrap items-end justify-center gap-4">
+            <div className="mb-5 flex flex-wrap items-end justify-center gap-4">
               <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Precio anterior</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 69,90</span></div>
               <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Precio de lanzamiento</span><span className="text-3xl font-bold text-upsell-success">US$ 9,99</span></div>
+            </div>
+            <div className="relative">
+              <div className="pointer-events-none absolute inset-8 rounded-full bg-upsell-blue/20 blur-[100px]" />
+              <MetodoVisual />
             </div>
             <div className="mt-6 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
             <p className="mt-3 text-center text-xs font-semibold text-white/55">Pago único · Acceso inmediato</p>
@@ -327,7 +340,7 @@ export function TuGemeloDigitalPage() {
         <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Precio especial de lanzamiento</span>
         <h2 className="mt-5 text-3xl font-bold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo</h2>
         <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-upsell-text-muted sm:text-lg">Incluye Tu Mente en GPT, Tu Segundo Cerebro, Tu Gemelo Digital y El Espejo Digital como bono.</p>
-        <img src={comboCover.url} alt="Método Mente Expandida completo" className="mx-auto mt-7 w-full max-w-[330px] rounded-[28px] object-cover" />
+        <div className="mx-auto mt-7 w-full max-w-[420px]"><MetodoVisual /></div>
         <div className="mx-auto mt-7 max-w-3xl rounded-[28px] border border-upsell-gold/30 bg-white/[0.045] p-5 sm:p-8">
           <div className="grid gap-3 text-left sm:grid-cols-2">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"><p className="font-bold text-white">Tu Mente en GPT</p><p className="mt-1 text-xs text-upsell-text-muted">Producto principal y base del método.</p></div>
