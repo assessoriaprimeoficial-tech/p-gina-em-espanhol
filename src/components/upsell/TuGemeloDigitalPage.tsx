@@ -334,53 +334,7 @@ export function TuGemeloDigitalPage() {
       <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
     </section>
 
-    <section id="combo" className="relative border-y border-white/10 bg-black/25 px-5 py-14 sm:px-6 sm:py-20">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-upsell-gold/10 blur-[150px]" />
-      <div className="relative mx-auto max-w-5xl">
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase">
-            <Sparkles className="h-4 w-4" /> Oferta por tiempo limitado
-          </span>
-          <h2 className="mt-5 text-3xl font-bold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-upsell-text-muted sm:text-lg">Todo el método en una sola oferta: una base para tu IA, guías para organizar tus ideas, presencia digital y una experiencia de reflexión como bono.</p>
-        </div>
-
-        <div className="mx-auto mt-9 max-w-4xl rounded-[32px] border border-upsell-gold/25 bg-white/[0.045] p-5 shadow-[0_35px_100px_-45px_rgba(37,99,235,0.55)] sm:p-8">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <article className="rounded-[24px] border border-upsell-blue/20 bg-upsell-blue/[0.07] p-6">
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-upsell-blue/15 text-upsell-blue"><Brain className="h-5 w-5" /></div>
-              <h3 className="text-xl font-bold text-white">Tu Mente en GPT</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Producto principal y base del método.</p>
-            </article>
-            <article className="rounded-[24px] border border-upsell-blue/20 bg-upsell-blue/[0.07] p-6">
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-upsell-blue/15 text-upsell-blue"><Lightbulb className="h-5 w-5" /></div>
-              <h3 className="text-xl font-bold text-white">Tu Segundo Cerebro</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Guía complementaria para organizar ideas y avanzar con claridad.</p>
-            </article>
-            <article className="rounded-[24px] border border-upsell-blue/20 bg-upsell-blue/[0.07] p-6">
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-upsell-blue/15 text-upsell-blue"><Video className="h-5 w-5" /></div>
-              <h3 className="text-xl font-bold text-white">Tu Gemelo Digital</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Guía complementaria para transformar ideas en contenido y presencia digital.</p>
-            </article>
-            <article className="rounded-[24px] border border-upsell-gold/30 bg-upsell-gold/[0.08] p-6">
-              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-upsell-gold/15 text-upsell-gold"><Eye className="h-5 w-5" /></div>
-              <h3 className="text-xl font-bold text-upsell-gold">El Espejo Digital</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Bono especial para descubrir nuevas perspectivas.</p>
-            </article>
-          </div>
-
-          <div className="mx-auto mt-8 max-w-xl rounded-[28px] border border-upsell-gold/25 bg-black/35 p-6 text-center sm:p-8">
-            <p className="text-xs font-bold tracking-[0.22em] text-red-400 uppercase">Precio anterior</p>
-            <p className="mt-2 text-3xl font-bold text-red-400 line-through decoration-red-400 sm:text-4xl">US$ 69,90</p>
-            <p className="upsell-eyebrow mt-6 text-xs tracking-[0.22em] text-upsell-success uppercase">Precio de lanzamiento</p>
-            <p className="mt-2 text-5xl font-bold text-upsell-success sm:text-7xl">US$ 9,99</p>
-            <div className="mt-7 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
-            <p className="mt-3 text-xs font-semibold text-white/55">Pago único · Acceso inmediato</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <section id="combo" className="relative border-y border-white/10 bg-black/25 px-5 py-14 sm:px-6 sm:py-20"><div className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-upsell-gold/10 blur-[150px]" /><div className="relative mx-auto max-w-5xl text-center"><span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Valor promocional por tiempo limitado</span><h2 className="mt-6 text-3xl font-bold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo<span className="upsell-text-gradient-gold block">Los 4 guías en un solo combo.</span></h2><p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-upsell-text-muted sm:text-lg">Recibes las cuatro partes del método para personalizar ChatGPT, pensar con mayor claridad, reconocer nuevos patrones y multiplicar tu presencia digital.</p><img src={comboCover.url} alt="Combo Método Mente Expandida con las 4 guías" className="mx-auto mt-10 w-full max-w-[340px] rounded-[28px] object-cover sm:max-w-md" /><div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-[32px] border border-upsell-gold/30 bg-white/[0.045] text-left shadow-[0_25px_100px_-40px_rgba(250,204,21,0.35)]"><div className="grid gap-3 p-5 sm:p-8">{comboItens.map(item => <div key={item.nome} className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4"><p className="font-bold text-white">{item.nome} <span className="ml-1 rounded-full bg-upsell-blue/20 px-2 py-0.5 text-[10px] font-bold tracking-wider text-upsell-blue uppercase">{item.etiqueta}</span></p><p className="mt-1 text-xs text-upsell-text-muted">{item.desc}</p></div>)}</div><div className="mx-5 mb-5 rounded-2xl border border-white/10 bg-black/30 p-5 text-center sm:mx-8 sm:mb-8 sm:p-7"><p className="upsell-eyebrow text-xs tracking-[0.22em] text-upsell-gold uppercase">valor único por el combo completo</p><div className="mt-2 text-4xl font-bold whitespace-nowrap text-upsell-success min-[360px]:text-5xl sm:text-7xl">QUIERO LOS 4 GUÍAS POR US$9,99</div><div className="mt-7 flex justify-center"><CTA href="#combo">QUIERO EL COMBO</CTA></div><div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-white/55"><span className="flex items-center gap-2"><CircleCheck className="h-4 w-4 text-upsell-success" /> Acceso inmediato</span><span className="flex items-center gap-2"><LockKeyhole className="h-4 w-4 text-upsell-success" /> Pago 100% seguro</span><span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-upsell-success" /> Garantía de 7 días</span></div></div></div></div></section>
     <section className="bg-upsell-light-alt px-5 py-12 sm:px-6 sm:py-14">
       <div className="mx-auto max-w-4xl text-center">
         <div className="relative mx-auto grid h-48 w-48 place-items-center rounded-full border-2 border-upsell-success/50 bg-upsell-success/10 sm:h-56 sm:w-56"><div className="absolute inset-3 rounded-full border border-dashed border-upsell-success/40" /><div><BadgeCheck className="mx-auto h-9 w-9 text-upsell-success" /><div className="mt-1 text-6xl font-bold leading-none text-upsell-light-text">7</div><div className="upsell-eyebrow mt-1 text-xs tracking-[0.24em] text-upsell-light-text/70">DÍAS</div><div className="mt-2 text-[10px] font-bold tracking-[0.2em] text-upsell-success uppercase">Garantía total</div></div></div>
