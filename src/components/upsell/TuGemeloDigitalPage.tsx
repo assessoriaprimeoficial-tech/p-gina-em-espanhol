@@ -172,7 +172,7 @@ function GuiasEsteira() {
   const nomes = ["Tu Mente en GPT", "Tu Segundo Cerebro", "Tu Gemelo Digital", "El Espejo Digital"];
   return <div className="upsell-marquee-mask mt-7 overflow-hidden">
     <div className="upsell-marquee flex w-max items-center gap-5 px-5">
-      {[...guiasEsteira, ...guiasEsteira].map((cover, index) => { const posicao = index % guiasEsteira.length; return <a key={`${cover.url}-${index}`} href={destinos[posicao]} aria-label={`Ver ${nomes[posicao]`} className="block w-[190px] shrink-0 cursor-pointer overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-1 shadow-[0_24px_70px_-35px_rgba(96,165,250,0.45)] transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-upsell-blue sm:w-[250px]"><img src={cover.url} alt={`Portada de ${nomes[posicao]`} className="aspect-square w-full rounded-[18px] object-cover" /></a>; })}
+      {[...guiasEsteira, ...guiasEsteira].map((cover, index) => { const posicao = index % guiasEsteira.length; return <a key={`${cover.url}-${index}`} href={destinos[posicao]} aria-label={`Ver ${nomes[posicao]}`} className="block w-[190px] shrink-0 cursor-pointer overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-1 shadow-[0_24px_70px_-35px_rgba(96,165,250,0.45)] transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-upsell-blue sm:w-[250px]"><img src={cover.url} alt={`Portada de ${nomes[posicao]}`} className="aspect-square w-full rounded-[18px] object-cover" /></a>; })}
     </div>
   </div>;
 }
