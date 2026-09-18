@@ -222,7 +222,7 @@ export function TuGemeloDigitalPage() {
             <div className="pointer-events-none absolute inset-8 rounded-full bg-upsell-blue/20 blur-[100px]" />
             <img src={comboCover.url} alt="Método Mente Expandida completo con los cuatro materiales" className="relative w-full rounded-[32px] object-cover shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]" />
             <div className="mt-6 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
-            <p className="mt-3 text-center text-xs font-semibold text-white/55">US$ 9,90 · Pago único · Acceso inmediato</p>
+            <p className="mt-3 text-center text-xs font-semibold text-white/55">Pago único · Acceso inmediato</p>
           </div>
         </div>
       </div>
