@@ -212,7 +212,7 @@ function ProdutoIndividual({ id, cover, etiqueta, nome, titulo, texto, beneficio
 
 export function TuGemeloDigitalPage() {
   return <main className="upsell-font overflow-hidden bg-upsell-bg text-upsell-text selection:bg-upsell-blue selection:text-white">
-    <div className="border-b border-red-500/40 bg-gradient-to-r from-red-700 via-red-600 to-red-700 px-4 py-2.5 text-center text-[9px] font-bold leading-4 tracking-[0.08em] text-white uppercase sm:text-xs sm:tracking-[0.14em]">🔥 Precio especial de lanzamiento</div>
+    <div className="border-b border-red-500/40 bg-gradient-to-r from-red-700 via-red-600 to-red-700 px-4 py-2.5 text-center text-[9px] font-bold leading-4 tracking-[0.08em] text-white uppercase sm:text-xs sm:tracking-[0.14em]">Oferta por tiempo limitado</div>
 
     <section id="oferta-completa-topo" className="relative overflow-hidden border-b border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-16">
       <MatrixRain />
