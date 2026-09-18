@@ -297,18 +297,49 @@ export function TuGemeloDigitalPage() {
       </div>
     </section>
 
-    <section className="bg-upsell-light px-5 py-12 sm:px-6 sm:py-16">
+    <section className="bg-upsell-light px-5 py-14 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
-        <TituloSecao light etiqueta="FÁCIL DE APLICAR" titulo={<>Sin programación. Sin código. <span className="text-upsell-light-blue">Paso a paso.</span></>}>El método está pensado para personas que ya utilizan ChatGPT y quieren avanzar sin necesitar conocimientos técnicos avanzados. Sigue las orientaciones, aplica cada etapa y aprende a utilizarla de forma práctica.</TituloSecao>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <TituloSecao light etiqueta="TUDO ORGANIZADO PARA APLICAR" titulo={<>Um método claro para <span className="text-upsell-light-blue">pensar, criar e avançar.</span></>}>
+          Cada etapa foi organizada para que você consiga aplicar o Método Mente Expandida de forma simples, prática e progressiva — sem se perder no caminho.
+        </TituloSecao>
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ["01", "Sin programación", "No necesitas desarrollar software ni aprender a programar."],
-            ["02", "Paso a paso", "La aplicación está organizada para que avances de forma clara."],
-            ["03", "Para principiantes", "Si ya utilizas ChatGPT, puedes comenzar aunque todavía estés aprendiendo sobre IA."],
-          ].map(([num, title, text]) => <article key={num} className="rounded-[24px] border border-upsell-light-border bg-upsell-light-surface p-6 text-center"><div className="upsell-eyebrow text-xs text-upsell-light-blue">{num}</div><h3 className="mt-3 text-xl font-bold text-upsell-light-text">{title}</h3><p className="mt-2 text-sm leading-6 text-upsell-light-muted">{text}</p></article>)}
+            ["01", "CONHEÇA SEU CONTEXTO", "Comece entendendo melhor sua realidade, seus objetivos e a forma como você quer trabalhar com a IA."],
+            ["02", "ORGANIZE SUAS IDEIAS", "Transforme pensamentos soltos em estruturas mais claras, possibilidades e próximos passos."],
+            ["03", "TRANSFORME EM AÇÃO", "Leve suas ideias para conteúdos, projetos e decisões com muito mais facilidade."],
+            ["04", "EXPANDA SUAS POSSIBILIDADES", "Use novas perspectivas para enxergar oportunidades, melhorar escolhas e continuar evoluindo."],
+          ].map(([num, title, text]) => (
+            <article key={num} className="group relative overflow-hidden rounded-[26px] border border-upsell-light-border bg-upsell-light-surface p-6 text-center transition-transform duration-300 hover:-translate-y-1">
+              <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl border border-upsell-light-blue/25 bg-upsell-light-blue/10 text-upsell-light-blue">
+                <span className="text-sm font-extrabold">{num}</span>
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-upsell-light-text sm:text-xl">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-upsell-light-muted">{text}</p>
+            </article>
+          ))}
         </div>
-        <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
+        <div className="mt-8 rounded-[28px] border border-upsell-light-border bg-white/70 px-5 py-6 text-center shadow-sm sm:px-8">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-upsell-light-blue">APLICAÇÃO SIMPLES E PROGRESSIVA</p>
+          <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-upsell-light-muted sm:text-base">
+            Você não precisa dominar inteligência artificial para começar. O método organiza a experiência em etapas para facilitar sua evolução.
+          </p>
+        </div>
       </div>
+      <div className="relative mt-9 overflow-hidden border-y border-upsell-light-border bg-white/80 py-3">
+        <div className="flex w-max animate-[marquee_28s_linear_infinite] gap-3 whitespace-nowrap px-3">
+          <div className="flex gap-3">
+            {["APLICAR O MÉTODO", "ORGANIZAR IDEIAS", "GANHAR CLAREZA", "CRIAR CONTEÚDO", "TOMAR DECISÕES", "TRANSFORMAR IDEIAS", "AVANÇAR COM MAIS FACILIDADE", "EXPANDIR POSSIBILIDADES"].map((item) => (
+              <span key={item} className="rounded-full border border-upsell-light-blue/25 bg-upsell-light-blue/10 px-4 py-2 text-xs font-bold tracking-wide text-upsell-light-blue sm:text-sm">{item}</span>
+            ))}
+          </div>
+          <div className="flex gap-3" aria-hidden="true">
+            {["APLICAR O MÉTODO", "ORGANIZAR IDEIAS", "GANHAR CLAREZA", "CRIAR CONTEÚDO", "TOMAR DECISÕES", "TRANSFORMAR IDEIAS", "AVANÇAR COM MAIS FACILIDADE", "EXPANDIR POSSIBILIDADES"].map((item) => (
+              <span key={item} className="rounded-full border border-upsell-light-blue/25 bg-upsell-light-blue/10 px-4 py-2 text-xs font-bold tracking-wide text-upsell-light-blue sm:text-sm">{item}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
     </section>
 
     <section className="px-5 py-12 sm:px-6 sm:py-16">
