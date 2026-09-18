@@ -21,7 +21,7 @@ import metodoNovo44 from "@/assets/metodo-novo-44.png.asset.json";
 
 const pilarImagens = [metodoNovo39, metodoNovo40, metodoNovo41, metodoNovo42, metodoNovo43, metodoNovo44];
 const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, depoimento14, depoimento15];
-const guiasEsteira = [tuMenteEnGPTCover, elEspejoDigitalCover, tuSegundoCerebroCover, tuGemeloDigitalCover];
+const guiasEsteira = [tuMenteEnGPTCover, tuSegundoCerebroCover, tuGemeloDigitalCover, elEspejoDigitalCover];
 const faixaItens = ["MÉTODO MENTE EXPANDIDA™", "GUÍA PRINCIPAL + BONOS GRATIS", "PAGO ÚNICO", "ACCESO INMEDIATO", "GARANTÍA DE 7 DÍAS", "TU IA, A TU MANERA"];
 const typewriterWords = ["CREAR.", "APRENDER.", "PRODUCIR.", "CONQUISTAR."];
 
@@ -34,9 +34,13 @@ function TypewriterWord() {
     const delay = !deleting ? (charCount < word.length ? 110 : 1700) : (charCount > 0 ? 60 : 350);
     const timer = setTimeout(() => {
       if (!deleting) {
-        if (charCount < word.length) setCharCount(charCount + 1); else setDeleting(true);
+        if (charCount < word.length) setCharCount(charCount + 1);
+        else setDeleting(true);
       } else if (charCount > 0) setCharCount(charCount - 1);
-      else { setDeleting(false); setWordIndex((wordIndex + 1) % typewriterWords.length); }
+      else {
+        setDeleting(false);
+        setWordIndex((wordIndex + 1) % typewriterWords.length);
+      }
     }, delay);
     return () => clearTimeout(timer);
   }, [charCount, deleting, wordIndex]);
@@ -48,74 +52,292 @@ const problemas = [
   "Pierdes minutos (y energía) explicando otra vez quién eres, qué haces y qué quieres lograr.",
   "Recibes respuestas genéricas que podrían haber sido escritas para cualquier persona — menos para ti.",
   "Tienes buenas ideas, pero se quedan en tu cabeza porque no consigues organizarlas, priorizarlas ni ejecutarlas.",
-  "Sabes que el contenido vende, pero no quieres pasar la vida grabándote frente a una cámara.",
-  "Todo tu conocimiento está disperso: notas, chats, ideas… y ningún sistema lo transforma en resultados.",
 ];
-const beneficiosMente = ["Enseñarle a la IA quién eres y cómo trabajas", "Configurar tu tono de voz y tus preferencias", "Organizar información sobre tus productos y tu público", "Transformar tu conocimiento en una base consultable", "Recibir respuestas más coherentes con tu contexto", "Reducir correcciones, repeticiones y retrabajo", "Crear contenido sin perder tu personalidad", "Tener una inteligencia preparada para empezar desde el lugar correcto"];
-const beneficiosEspejo = ["Patrones de pensamiento que aparecen repetidamente", "Formas recurrentes de tomar decisiones", "Fortalezas y habilidades que quizá estás subestimando", "Posibles creencias y bloqueos presentes en tus palabras", "Temas que ocupan tu atención con frecuencia", "Oportunidades que pueden estar frente a ti sin ser reconocidas", "Cambios que han ocurrido a lo largo de tu trayectoria", "Un verdadero “manual de tu mente”"];
-const comboItens = [
-  { nome: "Tu Mente en GPT", etiqueta: "Guía 1", desc: "Personaliza ChatGPT con tu contexto" },
-  { nome: "Tu Segundo Cerebro", etiqueta: "Guía 2", desc: "Piensa con mayor claridad dentro de ChatGPT" },
-  { nome: "Tu Gemelo Digital", etiqueta: "Guía 3", desc: "Transforma ideas en presencia digital" },
-  { nome: "El Espejo Digital", etiqueta: "Guía 4", desc: "Reflexión guiada con el apoyo de ChatGPT" },
+const beneficiosMente = [
+  "Respuestas más coherentes con tu contexto",
+  "Menos correcciones, repeticiones y retrabajo",
+  "Una IA más alineada con tu forma de comunicarte",
+  "Más claridad desde el inicio de cada conversación",
 ];
-const pilares = [
-  { step: "01", name: "Tu Mente en GPT", tag: "CONOCE", icon: Brain, title: "Tu ChatGPT parece genérico porque todavía no te conoce.", text: "Aprende, paso a paso y sin programación, a crear un GPT con tu contexto, tu personalidad, tu tono de voz y tus objetivos — para recibir respuestas mucho más alineadas sin tener que explicarlo todo de nuevo.", resultado: "RESULTADO: TU MENTE DIGITAL CREADA." },
-  { step: "02", name: "El Espejo Digital", tag: "BONO", icon: Eye, title: "¿Y si la IA ya hubiera percibido algo sobre ti que todavía no has notado?", text: "Usa prompts guiados para observar patrones presentes en tus conversaciones, reconocer fortalezas, posibles bloqueos, formas de decidir y oportunidades que pueden estar pasando desapercibidas.", resultado: "RESULTADO: UNA NUEVA PERSPECTIVA SOBRE TI." },
-  { step: "03", name: "Tu Segundo Cerebro", tag: "PIENSA", icon: Lightbulb, title: "¿Tu cabeza tiene demasiadas ideas y poca claridad?", text: "Usa comandos maestros listos para copiar y aplicar dentro de ChatGPT para organizar pensamientos, desarrollar ideas, analizar decisiones, encontrar puntos ciegos y transformar objetivos en planes concretos.", resultado: "RESULTADO: UNA INTELIGENCIA QUE PIENSA CONTIGO." },
-  { step: "04", name: "Tu Gemelo Digital", tag: "MULTIPLICA", icon: Video, title: "Créalo una vez. Aparece muchas veces.", text: "Aprende un proceso rápido y sorprendentemente fácil para transformar textos en videos con avatar y voz — incluso si no te gusta grabarte, tienes poco tiempo o nunca has editado un video.", resultado: "RESULTADO: TUS IDEAS GANAN VOZ, IMAGEN Y PRESENCIA." },
+const beneficiosSegundo = [
+  "Organizar pensamientos e ideas con mayor claridad",
+  "Desarrollar posibilidades antes de tomar una decisión",
+  "Convertir objetivos en planes de acción concretos",
+  "Avanzar con menos dudas y más criterio",
+];
+const beneficiosGemelo = [
+  "Transformar ideas en videos con mayor facilidad",
+  "Crear contenido sin depender de grabaciones constantes",
+  "Ampliar tu presencia digital con menos esfuerzo",
+  "Aplicarlo de forma sencilla aunque seas principiante",
+];
+const beneficiosEspejo = [
+  "Observar patrones presentes en tus conversaciones",
+  "Reconocer fortalezas y oportunidades",
+  "Reflexionar sobre comportamientos y decisiones",
+  "Obtener nuevas perspectivas sobre tu forma de actuar",
 ];
 const resultados = [
-  { icon: Brain, title: "Una IA que te conoce", text: "Se acabaron las respuestas genéricas: la IA entiende tu contexto y responde en tu propio idioma mental." },
-  { icon: Lightbulb, title: "Ideas que se multiplican", text: "Una sola idea se convierte en ángulos, formatos y oportunidades que por tu cuenta quizá no habrías visto." },
-  { icon: Target, title: "Decisiones con criterio", text: "Analiza riesgos, prioridades y puntos ciegos antes de actuar. Menos dudas, más avance." },
-  { icon: Layers3, title: "Mente organizada", text: "La información dispersa se transforma en estructuras claras, listas para ejecutar." },
-  { icon: MessageSquareText, title: "Contenido sin fricción", text: "Del pensamiento al guion, al post, al mensaje: publicas más con menos esfuerzo." },
-  { icon: Video, title: "Videos sin grabarte", text: "Tu avatar y tu voz trabajan por ti. Multiplica tu presencia sin multiplicar tu tiempo." },
-  { icon: Gauge, title: "Ejecución 10 veces más rápida", text: "La distancia entre pensar una idea y lanzarla se reduce a minutos, no semanas." },
-  { icon: Eye, title: "Ver lo que otros no ven", text: "Mejores preguntas, patrones claros y oportunidades que antes pasaban desapercibidas." },
+  { icon: Brain, title: "Una IA que te conoce", text: "Menos respuestas genéricas y más contexto para trabajar desde el lugar correcto." },
+  { icon: Lightbulb, title: "Ideas que se desarrollan", text: "Convierte pensamientos dispersos en posibilidades, estructuras y próximos pasos." },
+  { icon: Target, title: "Decisiones con más claridad", text: "Analiza prioridades, alternativas y puntos ciegos antes de actuar." },
+  { icon: Layers3, title: "Mente más organizada", text: "Reduce la dispersión y transforma información e ideas en algo más fácil de ejecutar." },
+  { icon: MessageSquareText, title: "Contenido con menos fricción", text: "Pasa de una idea a un contenido claro sin perder tu identidad." },
+  { icon: Video, title: "Más presencia digital", text: "Lleva tus ideas a formatos audiovisuales sin convertir la creación en una tarea pesada." },
+  { icon: Gauge, title: "Más velocidad de ejecución", text: "Acorta la distancia entre pensar, organizar y poner una idea en práctica." },
+  { icon: Eye, title: "Nuevas perspectivas", text: "Haz mejores preguntas y observa posibilidades que antes podían pasar desapercibidas." },
 ];
-const recursos = ["Perfil Maestro", "Prompt Maestro", "Comandos de Alto Valor", "Sistema de Decisiones", "Planes de Acción", "Análisis de Riesgos", "Avatar con IA", "Voz con IA", "Guiones para Video", "Prompts de Reflexión", "Mapa de Fortalezas", "Preguntas de Evolución"];
-const perguntas = [["¿Necesito saber programar?", "No. El método fue diseñado para aplicarse sin programación y sin conocimientos técnicos avanzados de prompts. Si sabes escribir un mensaje, puedes aplicarlo."], ["¿Necesito experiencia con inteligencia artificial?", "No. Puedes empezar desde cero y avanzar siguiendo el paso a paso de cada guía."], ["¿El método funciona con ChatGPT?", "Sí. Tu Mente en GPT y Tu Segundo Cerebro fueron creados para usar ChatGPT como base de trabajo, y los principios se aplican a cualquier IA de texto."], ["¿Puedo aplicarlo en mi negocio?", "Sí. El sistema sirve para organizar ideas, crear contenido, analizar decisiones, planificar proyectos y transformar conocimiento en ejecución."], ["¿Necesito saber editar videos?", "No es necesario dominar la edición avanzada. Tu Gemelo Digital simplifica la producción con herramientas de inteligencia artificial."], ["¿Cómo recibo el acceso?", "Después de confirmar el pago, el acceso se entrega digitalmente a través de la plataforma de compra. Puedes empezar en minutos."], ["¿El pago es único?", "Sí, la oferta de esta página es de pago único. Las condiciones finales se confirman en el checkout seguro antes de finalizar la compra."], ["¿Cómo funciona la garantía de 7 días?", "Tienes 7 días para conocer el método por dentro. Si decides que no es para ti, solicitas la garantía dentro del plazo según las condiciones de la plataforma de compra."]];
+const perguntas = [
+  ["¿Necesito saber programar?", "No. El método fue diseñado para aplicarse sin programación y sin conocimientos técnicos avanzados."],
+  ["¿Necesito experiencia con inteligencia artificial?", "No. Puedes empezar desde cero y avanzar siguiendo el paso a paso de cada guía."],
+  ["¿El método funciona con ChatGPT?", "Sí. Tu Mente en GPT y Tu Segundo Cerebro fueron creados para usar ChatGPT como base de trabajo."],
+  ["¿Puedo aplicarlo en mi negocio?", "Sí. El método puede ayudarte a organizar ideas, crear contenido, analizar decisiones y planificar proyectos."],
+  ["¿Necesito saber editar videos?", "No. Tu Gemelo Digital está pensado para simplificar la producción de contenido audiovisual."],
+  ["¿Cómo recibo el acceso?", "Después de confirmar el pago, el acceso se entrega digitalmente a través de la plataforma de compra."],
+  ["¿El pago es único?", "Sí, la oferta de esta página es de pago único. Las condiciones finales se confirman en el checkout seguro."],
+  ["¿Cómo funciona la garantía de 7 días?", "Tienes 7 días para conocer el método. Si decides que no es para ti, solicitas la garantía según las condiciones de la plataforma."],
+];
 
 function MatrixRain() {
   const ref = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
-    const canvas = ref.current; if (!canvas) return; const ctx = canvas.getContext("2d"); if (!ctx) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let raf = 0, last = 0; const fontSize = 16; const chars = "アイウエオカキクケコサシスセソ01<>[]{}#$%&"; let drops: number[] = [];
-    const resize = () => { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; drops = Array.from({ length: Math.ceil(canvas.width / fontSize) }, () => Math.floor(Math.random() * -50)); };
-    resize(); window.addEventListener("resize", resize);
-    const draw = (t: number) => { raf = requestAnimationFrame(draw); if (t - last < 78) return; last = t; ctx.fillStyle = "rgba(6, 10, 24, 0.2)"; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.font = `${fontSize}px "Share Tech Mono", monospace`; drops.forEach((y, i) => { const ch = chars[Math.floor(Math.random() * chars.length)] ?? "0"; ctx.fillStyle = Math.random() > 0.975 ? "rgba(191, 219, 254, 0.5)" : "rgba(96, 165, 250, 0.22)"; ctx.fillText(ch, i * fontSize, y * fontSize); drops[i] = y * fontSize > canvas.height && Math.random() > 0.975 ? 0 : y + 1; }); };
-    raf = requestAnimationFrame(draw); return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
+    const canvas = ref.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let raf = 0, last = 0;
+    const fontSize = 16;
+    const chars = "アイウエオカキクケコサシスセソ01<>[]{}#$%&";
+    let drops: number[] = [];
+    const resize = () => {
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+      drops = Array.from({ length: Math.ceil(canvas.width / fontSize) }, () => Math.floor(Math.random() * -50));
+    };
+    resize();
+    window.addEventListener("resize", resize);
+    const draw = (t: number) => {
+      raf = requestAnimationFrame(draw);
+      if (t - last < 78) return;
+      last = t;
+      ctx.fillStyle = "rgba(6, 10, 24, 0.2)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = `${fontSize}px "Share Tech Mono", monospace`;
+      drops.forEach((y, i) => {
+        const ch = chars[Math.floor(Math.random() * chars.length)] ?? "0";
+        ctx.fillStyle = Math.random() > 0.975 ? "rgba(191, 219, 254, 0.5)" : "rgba(96, 165, 250, 0.22)";
+        ctx.fillText(ch, i * fontSize, y * fontSize);
+        drops[i] = y * fontSize > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
+      });
+    };
+    raf = requestAnimationFrame(draw);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
   }, []);
   return <canvas ref={ref} aria-hidden className="upsell-matrix pointer-events-none absolute inset-0 h-full w-full opacity-60" />;
 }
-function TituloSecao({ etiqueta, titulo, light = false, children }: { etiqueta: string; titulo: ReactNode; light?: boolean; children?: ReactNode }) { return <div className="mx-auto max-w-3xl text-center"><div className={`upsell-eyebrow mb-4 text-xs tracking-[0.28em] uppercase ${light ? "text-upsell-light-blue" : "text-upsell-blue"}`}>{etiqueta}</div><h2 className={`text-3xl font-bold tracking-[-0.01em] sm:text-4xl md:text-5xl ${light ? "text-upsell-light-text" : "text-white"}`}>{titulo}</h2>{children ? <div className={`mt-5 text-base leading-7 sm:text-lg ${light ? "text-upsell-light-muted" : "text-upsell-text-muted"}`}>{children}</div> : null}</div>; }
-function CTA({ children = "QUIERO EL COMBO", href = "#oferta" }: { children?: ReactNode; href?: string }) { return <a href={href} className="upsell-cta inline-flex w-full max-w-xl items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-4 py-5 text-center text-xs tracking-wide text-white uppercase sm:gap-3 sm:px-6 sm:text-base">{children}<ArrowRight className="h-5 w-5 shrink-0" /></a>; }
-function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) { return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Portada ${nome}`} className="h-[240px] w-full rounded-[18px] object-cover sm:h-[290px]" /></div>; }
-function DepoimentoCard({ imagem, index }: { imagem: { url: string }; index: number }) { return <div className="w-[240px] shrink-0 overflow-hidden rounded-[20px] p-1 sm:w-[300px]"><img src={imagem.url} alt={`Testimonio de cliente ${index + 1}`} className="h-auto w-full rounded-[14px] object-contain" /></div>; }
-function GuiasEsteira() { return <div className="upsell-marquee-mask mt-8 overflow-hidden"><div className="upsell-marquee flex w-max items-center gap-5 px-5">{[...guiasEsteira, ...guiasEsteira].map((cover, index) => <div key={`${cover.url}-${index}`} className="w-[220px] shrink-0 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-1 shadow-[0_24px_70px_-35px_rgba(96,165,250,0.45)] sm:w-[280px]"><img src={cover.url} alt={`Portada ${index % guiasEsteira.length + 1} del Método Mente Expandida`} className="aspect-square w-full rounded-[18px] object-cover" /></div>)}</div></div>; }
+
+function TituloSecao({ etiqueta, titulo, light = false, children }: { etiqueta: string; titulo: ReactNode; light?: boolean; children?: ReactNode }) {
+  return <div className="mx-auto max-w-3xl text-center">
+    <div className={`upsell-eyebrow mb-4 text-xs tracking-[0.28em] uppercase ${light ? "text-upsell-light-blue" : "text-upsell-blue"}`}>{etiqueta}</div>
+    <h2 className={`text-3xl font-bold tracking-[-0.01em] sm:text-4xl md:text-5xl ${light ? "text-upsell-light-text" : "text-white"}`}>{titulo}</h2>
+    {children ? <div className={`mt-5 text-base leading-7 sm:text-lg ${light ? "text-upsell-light-muted" : "text-upsell-text-muted"}`}>{children}</div> : null}
+  </div>;
+}
+
+function CTA({ children = "QUERO COMEÇAR →", href = "#combo" }: { children?: ReactNode; href?: string }) {
+  return <a href={href} className="upsell-cta inline-flex w-full max-w-[380px] items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-6 py-4 text-center text-sm tracking-wide text-white uppercase sm:gap-3 sm:px-8 sm:text-base">{children}</a>;
+}
+
+function CapaCard({ cover, nome }: { cover: { url: string }; nome: string }) {
+  return <div className="w-[220px] shrink-0 overflow-hidden rounded-[24px] p-1 sm:w-[280px]"><img src={cover.url} alt={`Portada ${nome}`} className="h-[240px] w-full rounded-[18px] object-cover sm:h-[290px]" /></div>;
+}
+function DepoimentoCard({ imagem, index }: { imagem: { url: string }; index: number }) {
+  return <div className="w-[240px] shrink-0 overflow-hidden rounded-[20px] p-1 sm:w-[300px]"><img src={imagem.url} alt={`Testimonio de cliente ${index + 1}`} className="h-auto w-full rounded-[14px] object-contain" /></div>;
+}
+function GuiasEsteira() {
+  return <div className="upsell-marquee-mask mt-7 overflow-hidden">
+    <div className="upsell-marquee flex w-max items-center gap-5 px-5">
+      {[...guiasEsteira, ...guiasEsteira].map((cover, index) => <div key={`${cover.url}-${index}`} className="w-[190px] shrink-0 overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.035] p-1 shadow-[0_24px_70px_-35px_rgba(96,165,250,0.45)] sm:w-[250px]"><img src={cover.url} alt={`Portada ${index % guiasEsteira.length + 1} del Método Mente Expandida`} className="aspect-square w-full rounded-[18px] object-cover" /></div>)}
+    </div>
+  </div>;
+}
 const compradores = ["Mariana S.", "Carlos P.", "Fernanda L.", "João M.", "Ana Paula R.", "Ricardo T.", "Camila V.", "Diego A.", "Patrícia G."];
-function NotificacoesVendas() { const [atual, setAtual] = useState(0); useEffect(() => { const timer = setInterval(() => setAtual((value) => (value + 1) % compradores.length), 4200); return () => clearInterval(timer); }, []); return <div className="fixed bottom-4 left-4 z-40 hidden max-w-[320px] rounded-2xl border border-green-400/40 bg-gradient-to-r from-green-700 via-green-600 to-green-700 p-4 shadow-[0_12px_35px_-12px_rgba(34,197,94,0.75)] backdrop-blur-md sm:block"><div className="flex items-center gap-3"><div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/15 text-white"><Check className="h-4 w-4" /></div><div><p className="text-xs leading-5 text-white"><span className="font-bold">{compradores[atual]}</span> adquirió el <span className="font-bold text-white">Combo Método Mente Expandida</span></p><p className="mt-1 text-[10px] text-white/75">Hace pocos minutos</p></div></div></div>; }
+function NotificacoesVendas() {
+  const [atual, setAtual] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => setAtual((value) => (value + 1) % compradores.length), 4200);
+    return () => clearInterval(timer);
+  }, []);
+  return <div className="fixed bottom-4 left-4 z-40 hidden max-w-[320px] rounded-2xl border border-green-400/40 bg-gradient-to-r from-green-700 via-green-600 to-green-700 p-4 shadow-[0_12px_35px_-12px_rgba(34,197,94,0.75)] backdrop-blur-md sm:block">
+    <div className="flex items-center gap-3"><div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/15 text-white"><Check className="h-4 w-4" /></div><div><p className="text-xs leading-5 text-white"><span className="font-bold">{compradores[atual]}</span> adquirió el <span className="font-bold text-white">Método Mente Expandida</span></p><p className="mt-1 text-[10px] text-white/75">Hace pocos minutos</p></div></div>
+  </div>;
+}
+
+function ProdutoIndividual({ id, cover, etiqueta, nome, titulo, texto, beneficios, light = false, icon: Icon, cta = "QUERO O MÉTODO →" }: {
+  id?: string; cover: { url: string }; etiqueta: string; nome: string; titulo: string; texto: ReactNode; beneficios: string[]; light?: boolean; icon: typeof Brain; cta?: string;
+}) {
+  return <section id={id} className={light ? "bg-upsell-light px-5 py-12 sm:px-6 sm:py-16" : "border-y border-white/10 bg-white/[0.02] px-5 py-12 sm:px-6 sm:py-16"}>
+    <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2 lg:gap-14">
+      <div className={`flex justify-center ${light ? "lg:order-2" : "lg:order-1"}`}>
+        <div className="relative w-full max-w-[330px]">
+          <div className={`pointer-events-none absolute inset-6 rounded-full blur-[80px] ${light ? "bg-upsell-light-blue/20" : "bg-upsell-blue/15"}`} />
+          <img src={cover.url} alt={`Portada ${nome}`} className="relative mx-auto w-full rounded-[28px] object-cover shadow-[0_25px_80px_-35px_rgba(37,99,235,0.5)]" />
+        </div>
+      </div>
+      <div className={`text-center ${light ? "lg:order-1 lg:text-left" : "lg:order-2 lg:text-left"}`}>
+        <div className={`upsell-eyebrow text-xs tracking-[0.24em] uppercase ${light ? "text-upsell-light-blue" : "text-upsell-blue"}`}>{etiqueta}</div>
+        <div className={`mt-3 inline-flex h-12 w-12 items-center justify-center rounded-2xl border ${light ? "border-upsell-light-blue/25 bg-upsell-light-blue/10 text-upsell-light-blue" : "border-upsell-blue/25 bg-upsell-blue/10 text-upsell-blue"}`}><Icon className="h-6 w-6" /></div>
+        <h2 className={`mt-4 text-3xl font-bold sm:text-4xl ${light ? "text-upsell-light-text" : "text-white"}`}>{nome}</h2>
+        <h3 className={`mt-3 text-lg font-semibold sm:text-xl ${light ? "text-upsell-light-text/85" : "text-white/90"}`}>{titulo}</h3>
+        <div className={`mt-4 text-sm leading-7 sm:text-base ${light ? "text-upsell-light-muted" : "text-upsell-text-muted"}`}>{texto}</div>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          {beneficios.map((item) => <div key={item} className={`flex items-start gap-3 rounded-2xl border p-4 text-left ${light ? "border-upsell-light-border bg-upsell-light-surface" : "border-upsell-blue/20 bg-upsell-blue/[0.06]"}`}><Check className={`mt-0.5 h-4 w-4 shrink-0 ${light ? "text-upsell-light-blue" : "text-upsell-blue"}`} /><span className={`text-sm leading-6 ${light ? "text-upsell-light-text/85" : "text-white/85"}`}>{item}</span></div>)}
+        </div>
+        <div className="mt-7 flex justify-center lg:justify-start"><CTA>{cta}</CTA></div>
+      </div>
+    </div>
+  </section>;
+}
 
 export function TuGemeloDigitalPage() {
   return <main className="upsell-font overflow-hidden bg-upsell-bg text-upsell-text selection:bg-upsell-blue selection:text-white">
-    <div className="border-b border-red-500/40 bg-gradient-to-r from-red-700 via-red-600 to-red-700 px-4 py-2.5 text-center text-[9px] font-bold leading-4 tracking-[0.08em] text-white uppercase sm:text-xs sm:tracking-[0.14em]">🔥 ¡La oferta promocional está terminando!</div>
-    <section id="oferta-completa-topo" className="relative overflow-hidden border-b border-white/10 bg-black/25 px-5 py-14 sm:px-6 sm:py-20"><div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-upsell-gold/10 blur-[150px]" /><div className="relative mx-auto max-w-5xl text-center"><span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Método Mente Expandida™</span><h1 className="mt-6 text-3xl font-bold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo<span className="upsell-text-gradient-gold block">Los 4 guías en un solo combo.</span></h1><p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-upsell-text-muted sm:text-lg">Recibes las cuatro partes del método para personalizar ChatGPT, pensar con mayor claridad, reconocer nuevos patrones y multiplicar tu presencia digital.</p><img src={comboCover.url} alt="Método Mente Expandida completo con las cuatro guías" className="mx-auto mt-9 w-full max-w-[340px] rounded-[28px] object-cover sm:max-w-md" /><div className="mx-auto mt-9 max-w-3xl grid gap-3 text-left sm:grid-cols-2">{comboItens.map(item => <div key={item.nome} className="rounded-2xl border border-white/10 bg-white/[0.045] px-5 py-4"><p className="font-bold text-white">{item.nome} <span className="ml-1 rounded-full bg-upsell-blue/20 px-2 py-0.5 text-[10px] font-bold tracking-wider text-upsell-blue uppercase">{item.etiqueta}</span></p><p className="mt-1 text-xs text-upsell-text-muted">{item.desc}</p></div>)}</div><div className="mt-8 flex justify-center"><CTA href="#combo">QUIERO EL COMBO</CTA></div></div></section>
-    <section className="relative overflow-hidden px-5 pb-12 pt-14 sm:px-6 sm:pb-16 sm:pt-20"><MatrixRain /><div className="pointer-events-none absolute left-1/2 top-0 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-upsell-blue/15 blur-[140px]" /><div className="relative mx-auto max-w-7xl"><div className="mx-auto max-w-5xl text-center"><span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-blue/25 bg-upsell-blue/10 px-4 py-2 text-[11px] tracking-[0.22em] text-upsell-blue uppercase sm:text-xs"><Sparkles className="h-4 w-4" /> Método Mente Expandida™</span><h2 className="mt-7 text-xl font-bold leading-[1.2] tracking-tight text-white sm:text-3xl md:text-4xl">DESCUBRE CÓMO EXTRAER EL MÁXIMO PODER DE LA INTELIGENCIA ARTIFICIAL Y TRANSFORMARLA EN UNA VERDADERA <span className="upsell-text-gradient-blue">MÁQUINA DE RESULTADOS PARA</span><span className="mt-1.5 block text-3xl font-extrabold tracking-wide sm:text-5xl md:text-6xl"><TypewriterWord /></span></h2><GuiasEsteira /><p className="mx-auto mt-8 max-w-3xl text-base leading-7 text-upsell-text-muted sm:text-xl sm:leading-8">Tu ChatGPT parece genérico porque todavía no te conoce. Aprende a crear una inteligencia personalizada con <span className="font-semibold text-white">tu contexto, tu identidad, tu tono de voz y tus objetivos</span> — y deja de explicarlo todo de nuevo en cada conversación.</p><p className="mx-auto mt-5 max-w-3xl rounded-2xl border border-upsell-blue/25 bg-upsell-blue/[0.07] px-5 py-4 text-sm leading-6 text-white/80 sm:text-base">Sin programación, sin código y sin configuraciones complicadas. Sigue el paso a paso, copia, adapta y empieza a construir tu inteligencia personalizada.</p><div className="mt-9 flex justify-center"><CTA>QUIERO ACCEDER</CTA></div><div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-white/55 sm:text-sm"><span className="flex items-center gap-2"><CircleCheck className="h-4 w-4 text-upsell-success" /> Acceso digital inmediato</span><span className="flex items-center gap-2"><LockKeyhole className="h-4 w-4 text-upsell-success" /> Pago 100% seguro</span><span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-upsell-success" /> 7 días de garantía</span></div></div></div></section>
+    <div className="border-b border-red-500/40 bg-gradient-to-r from-red-700 via-red-600 to-red-700 px-4 py-2.5 text-center text-[9px] font-bold leading-4 tracking-[0.08em] text-white uppercase sm:text-xs sm:tracking-[0.14em]">🔥 Precio especial de lanzamiento</div>
+
+    <section id="oferta-completa-topo" className="relative overflow-hidden border-b border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-16">
+      <MatrixRain />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-upsell-gold/10 blur-[150px]" />
+      <div className="relative mx-auto max-w-6xl">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-12">
+          <div className="text-center lg:text-left">
+            <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Método Mente Expandida™</span>
+            <h1 className="mt-5 text-3xl font-bold tracking-[-0.02em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo</h1>
+            <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">Descubre cómo extraer el máximo poder de la inteligencia artificial y transformarla en una verdadera <span className="upsell-text-gradient-gold">máquina de resultados.</span></h2>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-upsell-text-muted sm:text-lg">Un método práctico para aprovechar mejor ChatGPT, organizar tus ideas, ganar claridad y transformar lo que sabes en presencia digital.</p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
+              <div className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3"><span className="block text-[10px] tracking-[0.16em] text-white/50 uppercase">Valor total</span><span className="text-xl font-bold text-white">US$ 37</span></div>
+              <div className="rounded-xl border border-upsell-gold/30 bg-upsell-gold/10 px-4 py-3"><span className="block text-[10px] tracking-[0.16em] text-upsell-gold uppercase">Precio especial de lanzamiento</span><span className="text-xl font-bold text-upsell-gold">US$ 9,90</span></div>
+              <div className="rounded-xl border border-upsell-success/30 bg-upsell-success/10 px-4 py-3"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Ahorro</span><span className="text-xl font-bold text-upsell-success">Más de 70%</span></div>
+            </div>
+            <div className="mt-6 flex justify-center lg:justify-start"><CTA>QUERO COMEÇAR →</CTA></div>
+            <p className="mt-3 text-xs font-semibold text-white/55">US$ 9,90 · Pago único · Acceso inmediato</p>
+          </div>
+          <div className="relative mx-auto w-full max-w-[420px]">
+            <div className="pointer-events-none absolute inset-8 rounded-full bg-upsell-blue/20 blur-[100px]" />
+            <img src={comboCover.url} alt="Método Mente Expandida completo con los cuatro materiales" className="relative w-full rounded-[32px] object-cover shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div className="upsell-marquee-mask border-y border-upsell-blue/30 bg-gradient-to-r from-blue-700 via-upsell-blue to-blue-700 py-3.5"><div className="upsell-marquee flex w-max items-center gap-8 px-4">{[...faixaItens, ...faixaItens, ...faixaItens, ...faixaItens].map((item, index) => <span key={index} className="upsell-eyebrow flex items-center gap-8 whitespace-nowrap text-xs tracking-[0.22em] text-white uppercase sm:text-sm">{item}<span className="text-white/50">◆</span></span>)}</div></div>
-    <section className="border-b border-white/10 bg-white/[0.02] px-5 py-14 sm:px-6 sm:py-20"><div className="mx-auto max-w-7xl"><TituloSecao etiqueta="EL VERDADERO PROBLEMA" titulo={<>La IA ya es brillante.<br /><span className="upsell-text-gradient-blue">El problema es que no sabe quién eres.</span></>}>Cada día que usas IA sin un sistema, pagas un precio invisible: tiempo, claridad y oportunidades. Mira si alguna de estas frases te resulta demasiado familiar:</TituloSecao><div className="mx-auto mt-8 grid max-w-5xl gap-4 md:grid-cols-2">{problemas.map(problema => <div key={problema} className="group flex items-center gap-4 rounded-2xl border border-red-500/40 bg-gradient-to-r from-red-600/20 to-red-500/[0.07] p-5 text-left shadow-[0_16px_50px_-25px_rgba(239,68,68,0.6)] sm:p-6"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-red-400/50 bg-red-500/25 text-red-300"><X className="h-5 w-5" /></span><p className="text-sm leading-6 font-bold text-red-100 sm:text-base">{problema}</p></div>)}</div><div className="mx-auto mt-10 flex max-w-4xl justify-center"><CTA>LO QUIERO YA</CTA></div></div></section>
-    <section className="bg-upsell-light px-5 py-14 sm:px-6 sm:py-20"><div className="mx-auto max-w-7xl"><TituloSecao light etiqueta="EL SISTEMA" titulo={<>Cada guía funciona por separado.<br /><span className="text-upsell-light-blue">Juntas, amplían todo tu potencial.</span></>}>Puedes usar cada solución por separado. Cuando conectas las cuatro, cada etapa complementa la siguiente y transforma ChatGPT en un sistema más completo para <span className="font-semibold">conocerte, pensar, crear y multiplicar contigo.</span></TituloSecao><div className="mt-10 grid gap-5 lg:grid-cols-2">{pilares.map(pilar => { const Icon = pilar.icon; return <article key={pilar.name} className="group relative overflow-hidden rounded-[30px] border border-upsell-light-border bg-upsell-light-surface p-7 text-center shadow-[0_24px_70px_-40px_rgba(30,58,138,0.35)] sm:p-9"><div className="relative flex flex-col items-center"><div className="grid h-14 w-14 place-items-center rounded-2xl border border-upsell-light-blue/25 bg-upsell-light-blue/10 text-upsell-light-blue"><Icon className="h-6 w-6" /></div><div className="upsell-eyebrow mt-5 text-xs tracking-[0.2em] text-upsell-light-blue">{pilar.step} · {pilar.tag}</div><h3 className="mt-2 text-2xl font-bold text-upsell-light-text sm:text-3xl">{pilar.name}</h3><p className="mt-3 text-base font-semibold text-upsell-light-text/80">{pilar.title}</p><p className="mt-3 text-sm leading-7 text-upsell-light-muted sm:text-base">{pilar.text}</p><p className="upsell-eyebrow mt-4 text-[11px] tracking-[0.16em] text-upsell-light-blue uppercase">{pilar.resultado}</p></div></article>; })}</div><div className="mt-8 flex justify-center"><CTA>QUIERO EMPEZAR</CTA></div></div></section>
-    <section id="tu-mente-en-gpt" className="border-y border-white/10 bg-white/[0.02] px-5 py-14 sm:px-6 sm:py-20"><div className="mx-auto max-w-7xl"><TituloSecao etiqueta="TU MENTE EN GPT" titulo={<>Tu Mente Digital creada, <span className="upsell-text-gradient-blue">sin programar nada.</span></>}>¿Cuántas veces has tenido que explicar qué haces, quién es tu público, cuál es tu objetivo y cómo quieres que se escriba el texto? Corriges el tono, cambias palabras, añades contexto y finalmente consigues una respuesta razonable. Pero, en la siguiente conversación, todo vuelve a empezar.</TituloSecao><div className="mx-auto mt-8 max-w-4xl space-y-5 text-center text-base leading-7 text-upsell-text-muted sm:text-lg"><p>Tu Mente en GPT muestra cómo transformar ChatGPT en una inteligencia personalizada, alimentada con tu identidad, tus conocimientos, tus objetivos, tus referencias y tu manera de comunicarte.</p><p>Siguiendo un proceso visual, claro y fácil de implementar, aprendes a construir tu <span className="font-semibold text-white">Perfil Maestro</span>, crear las instrucciones de tu asistente, organizar tus archivos de conocimiento y configurar un GPT que trabaje con mucho más contexto desde el inicio.</p><p>No necesitas programar, entender códigos ni dominar términos técnicos. La guía te acompaña en cada etapa y entrega estructuras y prompts listos para copiar, adaptar y utilizar.</p></div><div className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-2">{beneficiosMente.map(item => <div key={item} className="flex items-center gap-3 rounded-2xl border border-upsell-blue/20 bg-upsell-blue/[0.06] p-4"><span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-upsell-blue/15 text-upsell-blue"><Check className="h-4 w-4" /></span><p className="text-sm leading-6 text-white/85">{item}</p></div>)}</div><div className="mt-10 flex justify-center"><CTA>QUIERO MI ACCESO</CTA></div></div></section>
-    <section className="bg-upsell-light-alt px-5 py-14 sm:px-6 sm:py-20"><div className="mx-auto max-w-7xl"><TituloSecao light etiqueta="EL ESPEJO DIGITAL · BONO" titulo={<>Una nueva perspectiva <span className="text-upsell-light-blue">sobre ti.</span></>}>¿Y si la IA ya hubiera percibido algo sobre ti que todavía no has notado? Usa prompts guiados para observar patrones presentes en tus conversaciones, reconocer fortalezas, posibles bloqueos, formas de decidir y oportunidades que pueden estar pasando desapercibidas.</TituloSecao><div className="mx-auto mt-8 max-w-4xl text-center text-base leading-7 text-upsell-light-muted sm:text-lg">El Espejo Digital es una herramienta de reflexión guiada por IA. Sus respuestas se basan en la información proporcionada por el usuario y no representan diagnóstico, terapia ni evaluación psicológica.</div><div className="mx-auto mt-10 grid max-w-5xl gap-3 sm:grid-cols-2">{beneficiosEspejo.map(item => <div key={item} className="flex items-center gap-3 rounded-2xl border border-upsell-light-border bg-upsell-light-surface p-4"><span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-upsell-light-blue/10 text-upsell-light-blue"><Check className="h-4 w-4" /></span><p className="text-sm leading-6 text-upsell-light-text/85">{item}</p></div>)}</div><div className="mt-10 flex justify-center"><CTA>SÍ, LO QUIERO</CTA></div></div></section>
-    <section className="py-14 sm:py-20"><div className="px-5 sm:px-6"><div className="mx-auto max-w-3xl text-center"><div className="upsell-eyebrow mb-4 text-xs tracking-[0.28em] text-upsell-gold uppercase">MIRA EL MÉTODO COBRAR VIDA</div><h2 className="text-3xl font-bold text-white sm:text-4xl">Es así de simple: cualquiera puede usarlo,<br className="hidden sm:block" /> <span className="upsell-text-gradient-blue">desde cualquier lugar, directamente en ChatGPT.</span></h2></div></div><div className="upsell-marquee-mask mt-10 overflow-hidden"><div className="upsell-marquee flex w-max items-center gap-5 px-5">{[...pilarImagens, ...pilarImagens, ...pilarImagens].map((cover, index) => <CapaCard key={index} cover={cover} nome="Método Mente Expandida" />)}</div></div><div className="px-5 sm:px-6"><div className="mx-auto mt-10 max-w-3xl text-center"><div className="upsell-eyebrow mb-4 text-xs tracking-[0.28em] text-upsell-gold uppercase">TESTIMONIOS</div><h3 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Quienes ya aplicaron el método nunca volvieron a usar la IA de la misma manera.</h3></div></div><div className="upsell-marquee-mask mt-10 overflow-hidden"><div className="upsell-marquee-reverse flex w-max items-center gap-5 px-5">{[...depoimentos, ...depoimentos].map((item, index) => <DepoimentoCard key={index} imagem={item} index={index % depoimentos.length} />)}</div></div><div className="mt-10 flex justify-center px-5 sm:px-6"><CTA>QUIERO APROVECHAR</CTA></div></section>
-    <section className="bg-upsell-light-alt px-5 py-14 sm:px-6 sm:py-20"><div className="mx-auto max-w-7xl"><TituloSecao light etiqueta="EN LA PRÁCTICA" titulo={<>Esto es lo que cambia <span className="text-upsell-light-blue">desde el primer día.</span></>} /><div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{resultados.map(({ icon: Icon, title, text }) => <article key={title} className="flex flex-col items-center rounded-[24px] border border-upsell-light-border bg-upsell-light-surface p-6 text-center"><div className="grid h-11 w-11 place-items-center rounded-xl bg-upsell-light-blue/10 text-upsell-light-blue"><Icon className="h-5 w-5" /></div><h3 className="mt-5 text-lg font-bold text-upsell-light-text">{title}</h3><p className="mt-2 text-sm leading-6 text-upsell-light-muted">{text}</p></article>)}</div><div className="mt-10 flex justify-center"><CTA>QUIERO EL COMBO</CTA></div></div></section>
-    <section className="py-14 sm:py-20"><div className="px-5 sm:px-6"><TituloSecao etiqueta="RECURSOS" titulo={<>Todo organizado para que puedas <span className="upsell-text-gradient-blue">aplicar el método.</span></>}>12 recursos listos para usar, creados para que apliques el método sin teoría innecesaria:</TituloSecao></div><div className="upsell-marquee-mask mt-12 overflow-hidden"><div className="upsell-marquee-reverse flex w-max gap-3 px-4">{[...recursos, ...recursos].map((recurso, index) => <div key={`${recurso}-${index}`} className="flex min-w-[230px] items-center gap-3 rounded-2xl bg-white/[0.035] px-5 py-4"><div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-upsell-blue/10 text-upsell-blue"><Check className="h-4 w-4" /></div><span className="text-sm font-semibold text-white/85">{recurso}</span></div>)}</div></div><div className="mt-10 flex justify-center px-5 sm:px-6"><CTA>QUIERO ACCEDER</CTA></div></section>
-    <section className="bg-upsell-light px-5 py-14 sm:px-6 sm:py-20"><div className="mx-auto max-w-7xl"><TituloSecao light etiqueta="IMAGINA TENER ESTO" titulo={<>Imagina abrir el chat y que la IA <span className="text-upsell-light-blue">ya sepa de qué estás hablando.</span></>}>Esto es lo que podrás pedirle a tu inteligencia digital, sin explicar nada de nuevo:</TituloSecao><div className="mx-auto mt-8 grid max-w-5xl gap-4">{["Analiza esta decisión teniendo en cuenta mis objetivos, mi forma de pensar y todo el contexto que ya conoces sobre mí.", "Tengo esta idea. Amplíala, encuentra las oportunidades que no estoy viendo y conviértela en un plan de acción.", "Transforma este contenido en un guion claro para mi avatar digital y adapta el mensaje para un video corto.", "Haz las preguntas necesarias para identificar qué patrón está influyendo en esta decisión."].map((prompt, index) => <div key={prompt} className="flex gap-4 rounded-[24px] border border-upsell-light-border bg-upsell-light-surface p-5 sm:p-6"><div className="upsell-eyebrow grid h-10 w-10 shrink-0 place-items-center rounded-full bg-upsell-light-blue/10 text-xs text-upsell-light-blue">0{index + 1}</div><p className="text-sm leading-7 text-upsell-light-text/85 sm:text-base">“{prompt}”</p></div>)}</div><div className="mt-10 flex justify-center"><CTA>QUIERO LAS 4 GUÍAS</CTA></div></div></section>
-    <section id="combo" className="relative border-y border-white/10 bg-black/25 px-5 py-14 sm:px-6 sm:py-20"><div className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-upsell-gold/10 blur-[150px]" /><div className="relative mx-auto max-w-5xl text-center"><span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Valor promocional por tiempo limitado</span><h2 className="mt-6 text-3xl font-bold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo<span className="upsell-text-gradient-gold block">Los 4 guías en un solo combo.</span></h2><p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-upsell-text-muted sm:text-lg">Recibes las cuatro partes del método para personalizar ChatGPT, pensar con mayor claridad, reconocer nuevos patrones y multiplicar tu presencia digital.</p><img src={comboCover.url} alt="Combo Método Mente Expandida con las 4 guías" className="mx-auto mt-10 w-full max-w-[340px] rounded-[28px] object-cover sm:max-w-md" /><div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-[32px] border border-upsell-gold/30 bg-white/[0.045] text-left shadow-[0_25px_100px_-40px_rgba(250,204,21,0.35)]"><div className="grid gap-3 p-5 sm:p-8">{comboItens.map(item => <div key={item.nome} className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4"><p className="font-bold text-white">{item.nome} <span className="ml-1 rounded-full bg-upsell-blue/20 px-2 py-0.5 text-[10px] font-bold tracking-wider text-upsell-blue uppercase">{item.etiqueta}</span></p><p className="mt-1 text-xs text-upsell-text-muted">{item.desc}</p></div>)}</div><div className="mx-5 mb-5 rounded-2xl border border-white/10 bg-black/30 p-5 text-center sm:mx-8 sm:mb-8 sm:p-7"><p className="upsell-eyebrow text-xs tracking-[0.22em] text-upsell-gold uppercase">valor único por el combo completo</p><div className="mt-2 text-4xl font-bold whitespace-nowrap text-upsell-success min-[360px]:text-5xl sm:text-7xl">QUIERO LOS 4 GUÍAS POR US$9,99</div><div className="mt-7 flex justify-center"><CTA href="#combo">QUIERO EL COMBO</CTA></div><div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-semibold text-white/55"><span className="flex items-center gap-2"><CircleCheck className="h-4 w-4 text-upsell-success" /> Acceso inmediato</span><span className="flex items-center gap-2"><LockKeyhole className="h-4 w-4 text-upsell-success" /> Pago 100% seguro</span><span className="flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-upsell-success" /> Garantía de 7 días</span></div></div></div></div></section>
-    <section className="bg-upsell-light-alt px-5 py-14 sm:px-6 sm:py-20"><div className="mx-auto max-w-4xl text-center"><div className="relative mx-auto grid h-56 w-56 place-items-center rounded-full border-2 border-upsell-success/50 bg-upsell-success/10 text-center sm:h-64 sm:w-64"><div className="absolute inset-3 rounded-full border border-dashed border-upsell-success/40" /><div><BadgeCheck className="mx-auto h-10 w-10 text-upsell-success" /><div className="mt-1 text-6xl font-bold leading-none text-upsell-light-text">7</div><div className="upsell-eyebrow mt-1 text-xs tracking-[0.24em] text-upsell-light-text/70">DÍAS</div><div className="mt-2 text-[10px] font-bold tracking-[0.2em] text-upsell-success uppercase">Garantía total</div></div></div><div className="mt-10"><div className="upsell-eyebrow text-xs tracking-[0.22em] text-upsell-success uppercase">RIESGO CERO PARA TI</div><h2 className="mt-4 text-4xl font-bold text-upsell-light-text sm:text-5xl">Pruébalo durante 7 días. El riesgo lo asumimos nosotros.</h2><p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-upsell-light-muted sm:text-lg">Entra, aplica el método y comprueba los resultados por ti mismo. Si en 7 días decides que no es para ti, solo tienes que solicitar la garantía según las condiciones de la plataforma de compra.</p></div><div className="mt-10 flex justify-center"><CTA>LO QUIERO YA</CTA></div></div></section>
-    <section className="bg-upsell-light px-5 py-14 sm:px-6 sm:py-20"><div className="mx-auto max-w-4xl"><TituloSecao light etiqueta="PREGUNTAS FRECUENTES" titulo="El último paso antes de comenzar." /><div className="mt-12 space-y-3">{perguntas.map(([pergunta, resposta]) => <details key={pergunta} className="group rounded-2xl border border-upsell-light-border bg-upsell-light-surface p-5 open:border-upsell-light-blue/40"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-upsell-light-text"><span>{pergunta}</span><ChevronDown className="h-5 w-5 shrink-0 text-upsell-light-blue transition group-open:rotate-180" /></summary><p className="mt-4 pr-6 text-sm leading-7 text-upsell-light-muted sm:text-base">{resposta}</p></details>)}</div><div className="mt-10 flex justify-center"><CTA>QUIERO EMPEZAR</CTA></div></div></section>
+
+    <section className="bg-upsell-light px-5 py-12 sm:px-6 sm:py-16">
+      <div className="mx-auto max-w-7xl">
+        <TituloSecao light etiqueta="INCLUYE EL MÉTODO COMPLETO" titulo={<>Cuatro materiales que se complementan <span className="text-upsell-light-blue">en una sola experiencia.</span></>}>El método reúne un producto principal, dos guías complementarias y un bono especial para acompañarte desde el contexto y el pensamiento hasta la presencia digital y las nuevas perspectivas.</TituloSecao>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            [tuMenteEnGPTCover, "Tu Mente en GPT", "Producto principal", "La base del método."],
+            [tuSegundoCerebroCover, "Tu Segundo Cerebro", "Guía complementaria", "Pensamiento e ideas con más claridad."],
+            [tuGemeloDigitalCover, "Tu Gemelo Digital", "Guía complementaria", "Ideas transformadas en presencia digital."],
+            [elEspejoDigitalCover, "El Espejo Digital", "Bono", "Una nueva perspectiva sobre ti."],
+          ].map(([cover, nome, tag, desc]) => <article key={nome as string} className={`rounded-[26px] border p-4 text-center ${tag === "Bono" ? "border-upsell-gold/40 bg-upsell-gold/[0.08]" : "border-upsell-light-border bg-upsell-light-surface"}`}><img src={(cover as {url:string}).url} alt={`Portada ${nome}`} className="mx-auto aspect-square w-full max-w-[190px] rounded-[18px] object-cover" /><div className={`upsell-eyebrow mt-4 text-[10px] tracking-[0.18em] uppercase ${tag === "Bono" ? "text-upsell-gold" : "text-upsell-light-blue"}`}>{tag}</div><h3 className="mt-2 text-lg font-bold text-upsell-light-text">{nome}</h3><p className="mt-1 text-sm leading-6 text-upsell-light-muted">{desc}</p></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="border-y border-white/10 bg-white/[0.02] px-5 py-12 sm:px-6 sm:py-16">
+      <div className="mx-auto max-w-7xl">
+        <TituloSecao etiqueta="EL VERDADERO PROBLEMA" titulo={<>La IA ya es brillante.<br /><span className="upsell-text-gradient-blue">El problema es no saber aprovecharla.</span></>}>Si ya utilizas ChatGPT, probablemente no necesitas otra herramienta. Necesitas aprender a sacar más provecho de la que ya tienes, sin repetir constantemente el mismo contexto ni dejar buenas ideas a medias.</TituloSecao>
+        <div className="mx-auto mt-8 grid max-w-5xl gap-3 sm:grid-cols-2">{problemas.map((problema) => <div key={problema} className="flex items-start gap-4 rounded-2xl border border-red-500/30 bg-gradient-to-r from-red-600/15 to-red-500/[0.04] p-5"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-red-400/40 bg-red-500/15 text-red-300"><X className="h-4 w-4" /></span><p className="text-sm leading-6 font-semibold text-red-100">{problema}</p></div>)}</div>
+      </div>
+    </section>
+
+    <ProdutoIndividual id="tu-mente-en-gpt" cover={tuMenteEnGPTCover} etiqueta="01 · BASE DEL MÉTODO" nome="Tu Mente en GPT" titulo="Una inteligencia que entiende mejor tu contexto." texto={<>La guía te ayuda a pasar de conversaciones genéricas a una experiencia más alineada con tu identidad, objetivos y forma de comunicarte. El objetivo es que puedas trabajar con más contexto y reducir la necesidad de empezar de cero.</>} beneficios={beneficiosMente} icon={Brain} cta="QUERO O MÉTODO →" />
+    <ProdutoIndividual cover={tuSegundoCerebroCover} etiqueta="02 · CONTINUIDAD DEL MÉTODO" nome="Tu Segundo Cerebro" titulo="Organiza tus pensamientos y desarrolla tus ideas." texto={<>La segunda etapa está enfocada en transformar pensamientos dispersos en posibilidades más claras, analizar alternativas y convertir objetivos en acciones concretas para avanzar con mayor claridad.</>} beneficios={beneficiosSegundo} light icon={Lightbulb} cta="QUERO O MÉTODO →" />
+    <ProdutoIndividual cover={tuGemeloDigitalCover} etiqueta="03 · PRESENCIA DIGITAL" nome="Tu Gemelo Digital" titulo="Transforma ideas en contenido y presencia." texto={<>Esta etapa lleva tus ideas al formato audiovisual de una manera más sencilla. Está pensada para ayudarte a producir contenido con más constancia, incluso si tienes poco tiempo o estás empezando.</>} beneficios={beneficiosGemelo} icon={Video} cta="QUERO O MÉTODO →" />
+    <ProdutoIndividual cover={elEspejoDigitalCover} etiqueta="04 · BONO ESPECIAL" nome="El Espejo Digital" titulo="Una nueva perspectiva sobre tus patrones y decisiones." texto={<>Como bono de la oferta, encuentras una experiencia de reflexión guiada que puede ayudarte a observar patrones presentes en tus conversaciones, reconocer fortalezas y descubrir nuevas perspectivas.</>} beneficios={beneficiosEspejo} light icon={Eye} cta="QUERO O MÉTODO →" />
+
+    <section className="relative overflow-hidden border-y border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-14">
+      <MatrixRain />
+      <div className="relative mx-auto max-w-5xl text-center">
+        <div className="upsell-eyebrow text-xs tracking-[0.26em] text-upsell-gold uppercase">LA CONEXIÓN DEL MÉTODO</div>
+        <h2 className="mt-4 text-2xl font-bold text-white sm:text-4xl">De conocerte a ayudarte a pensar, crear y ver nuevas posibilidades.</h2>
+        <div className="mt-8 grid gap-3 sm:grid-cols-4">
+          {[
+            ["01", "LA IA CONOCE VOCÊ", Brain],
+            ["02", "AYUDA VOCÊ A PENSAR", Lightbulb],
+            ["03", "TRANSFORMA IDEAS EN PRESENCIA", Video],
+            ["04", "REVELA NOVAS PERSPECTIVAS", Eye],
+          ].map(([num, text, Icon]) => <div key={num as string} className="relative rounded-2xl border border-upsell-blue/25 bg-upsell-blue/[0.06] p-5"><div className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-upsell-blue/15 text-upsell-blue"><Icon className="h-5 w-5" /></div><div className="upsell-eyebrow mt-3 text-[10px] text-upsell-blue">{num}</div><p className="mt-2 text-xs font-bold leading-5 text-white">{text}</p></div>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-upsell-light px-5 py-12 sm:px-6 sm:py-16">
+      <div className="mx-auto max-w-6xl">
+        <TituloSecao light etiqueta="FÁCIL DE APLICAR" titulo={<>Sin programación. Sin código. <span className="text-upsell-light-blue">Paso a paso.</span></>}>El método está pensado para personas que ya utilizan ChatGPT y quieren avanzar sin necesitar conocimientos técnicos avanzados. Sigue las orientaciones, aplica cada etapa y aprende a utilizarla de forma práctica.</TituloSecao>
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          {[
+            ["01", "Sin programación", "No necesitas desarrollar software ni aprender a programar."],
+            ["02", "Paso a paso", "La aplicación está organizada para que avances de forma clara."],
+            ["03", "Para principiantes", "Si ya utilizas ChatGPT, puedes comenzar aunque todavía estés aprendiendo sobre IA."],
+          ].map(([num, title, text]) => <article key={num} className="rounded-[24px] border border-upsell-light-border bg-upsell-light-surface p-6 text-center"><div className="upsell-eyebrow text-xs text-upsell-light-blue">{num}</div><h3 className="mt-3 text-xl font-bold text-upsell-light-text">{title}</h3><p className="mt-2 text-sm leading-6 text-upsell-light-muted">{text}</p></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="px-5 py-12 sm:px-6 sm:py-16">
+      <div className="mx-auto max-w-7xl">
+        <TituloSecao etiqueta="BENEFICIOS Y RESULTADOS" titulo={<>Lo que puede cambiar cuando <span className="upsell-text-gradient-blue">aplicas el método.</span></>}>Resultados prácticos para organizar mejor tu relación con la IA, desarrollar ideas y llevarlas a la acción.</TituloSecao>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{resultados.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-[24px] border border-white/10 bg-white/[0.035] p-6 text-center transition-transform duration-300 hover:-translate-y-1"><div className="mx-auto grid h-11 w-11 place-items-center rounded-xl bg-upsell-blue/10 text-upsell-blue"><Icon className="h-5 w-5" /></div><h3 className="mt-4 text-lg font-bold text-white">{title}</h3><p className="mt-2 text-sm leading-6 text-upsell-text-muted">{text}</p></article>)}</div>
+      </div>
+    </section>
+
+    <section className="bg-upsell-light-alt px-5 py-12 sm:px-6 sm:py-16">
+      <div className="mx-auto max-w-7xl">
+        <TituloSecao light etiqueta="TESTIMONIOS" titulo={<>Personas que ya comenzaron a <span className="text-upsell-light-blue">aplicar el método.</span></>} />
+      </div>
+      <div className="upsell-marquee-mask mt-8 overflow-hidden"><div className="upsell-marquee-reverse flex w-max items-center gap-5 px-5">{[...depoimentos, ...depoimentos].map((item, index) => <DepoimentoCard key={index} imagem={item} index={index % depoimentos.length} />)}</div></div>
+    </section>
+
+    <section id="combo" className="relative border-y border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-16">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-upsell-gold/10 blur-[150px]" />
+      <div className="relative mx-auto max-w-5xl text-center">
+        <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Precio especial de lanzamiento</span>
+        <h2 className="mt-5 text-3xl font-bold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo</h2>
+        <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-upsell-text-muted sm:text-lg">Incluye Tu Mente en GPT, Tu Segundo Cerebro, Tu Gemelo Digital y El Espejo Digital como bono.</p>
+        <img src={comboCover.url} alt="Método Mente Expandida completo" className="mx-auto mt-7 w-full max-w-[330px] rounded-[28px] object-cover" />
+        <div className="mx-auto mt-7 max-w-3xl rounded-[28px] border border-upsell-gold/30 bg-white/[0.045] p-5 sm:p-8">
+          <div className="grid gap-3 text-left sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"><p className="font-bold text-white">Tu Mente en GPT</p><p className="mt-1 text-xs text-upsell-text-muted">Producto principal y base del método.</p></div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"><p className="font-bold text-white">Tu Segundo Cerebro</p><p className="mt-1 text-xs text-upsell-text-muted">Guía complementaria.</p></div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4"><p className="font-bold text-white">Tu Gemelo Digital</p><p className="mt-1 text-xs text-upsell-text-muted">Guía complementaria.</p></div>
+            <div className="rounded-2xl border border-upsell-gold/30 bg-upsell-gold/[0.08] p-4"><p className="font-bold text-upsell-gold">El Espejo Digital · BONO</p><p className="mt-1 text-xs text-upsell-text-muted">Bono de reflexión guiada.</p></div>
+          </div>
+          <div className="mt-6 rounded-2xl border border-white/10 bg-black/30 p-5 sm:p-7">
+            <p className="upsell-eyebrow text-xs tracking-[0.22em] text-white/50 uppercase">Valor total del conjunto</p>
+            <p className="mt-1 text-3xl font-bold text-white line-through decoration-white/50 sm:text-4xl">US$ 37</p>
+            <p className="upsell-eyebrow mt-5 text-xs tracking-[0.22em] text-upsell-gold uppercase">Precio especial de lanzamiento</p>
+            <p className="mt-1 text-5xl font-bold text-upsell-gold sm:text-7xl">US$ 9,90</p>
+            <p className="mt-2 text-sm font-bold text-upsell-success">ECONOMIZE MAIS DE 70%</p>
+            <div className="mt-6 flex justify-center"><CTA>QUERO COMEÇAR →</CTA></div>
+            <p className="mt-3 text-xs font-semibold text-white/55">US$ 9,90 · Pago único · Acceso inmediato</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="bg-upsell-light-alt px-5 py-12 sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-4xl text-center">
+        <div className="relative mx-auto grid h-48 w-48 place-items-center rounded-full border-2 border-upsell-success/50 bg-upsell-success/10 sm:h-56 sm:w-56"><div className="absolute inset-3 rounded-full border border-dashed border-upsell-success/40" /><div><BadgeCheck className="mx-auto h-9 w-9 text-upsell-success" /><div className="mt-1 text-6xl font-bold leading-none text-upsell-light-text">7</div><div className="upsell-eyebrow mt-1 text-xs tracking-[0.24em] text-upsell-light-text/70">DÍAS</div><div className="mt-2 text-[10px] font-bold tracking-[0.2em] text-upsell-success uppercase">Garantía total</div></div></div>
+        <div className="mt-7"><div className="upsell-eyebrow text-xs tracking-[0.22em] text-upsell-success uppercase">GARANTÍA DE 7 DÍAS</div><h2 className="mt-3 text-3xl font-bold text-upsell-light-text sm:text-4xl">Conoce el método durante 7 días.</h2><p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-upsell-light-muted sm:text-base">Si decides que no es para ti, puedes solicitar la garantía dentro del plazo según las condiciones de la plataforma de compra.</p></div>
+      </div>
+    </section>
+
+    <section className="bg-upsell-light px-5 py-12 sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-4xl"><TituloSecao light etiqueta="PREGUNTAS FRECUENTES" titulo="El último paso antes de comenzar." /><div className="mt-8 space-y-3">{perguntas.map(([pergunta, resposta]) => <details key={pergunta} className="group rounded-2xl border border-upsell-light-border bg-upsell-light-surface p-5 open:border-upsell-light-blue/40"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-upsell-light-text"><span>{pergunta}</span><ChevronDown className="h-5 w-5 shrink-0 text-upsell-light-blue transition group-open:rotate-180" /></summary><p className="mt-4 pr-6 text-sm leading-7 text-upsell-light-muted sm:text-base">{resposta}</p></details>)}</div></div>
+    </section>
+
     <NotificacoesVendas />
     <footer className="border-t border-white/10 px-5 py-8 text-center text-xs text-white/35 sm:px-6"><div className="upsell-eyebrow tracking-[0.18em] text-white/55">MÉTODO MENTE EXPANDIDA™</div><p className="mt-3">Producto digital. Los resultados dependen de la aplicación individual del método y de las herramientas utilizadas.</p><p className="mt-4 text-[10px] text-white/25">© 2026 We Digital Mindset · Creado por Soeliz M. Dragaud</p><p className="mt-1 text-[10px] text-white/25"><a href="#politica-de-privacidad" className="underline-offset-2 transition-colors hover:text-white/50">Política de Privacidad</a> · <a href="#terminos-de-uso" className="underline-offset-2 transition-colors hover:text-white/50">Términos de Uso</a> · <a href="#contacto" className="underline-offset-2 transition-colors hover:text-white/50">Contacto</a></p></footer>
   </main>;
