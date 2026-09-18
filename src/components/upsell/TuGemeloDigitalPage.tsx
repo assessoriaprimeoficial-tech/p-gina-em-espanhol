@@ -213,10 +213,9 @@ export function TuGemeloDigitalPage() {
             <h1 className="mt-5 text-3xl font-bold tracking-[-0.02em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo</h1>
             <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">Descubre cómo extraer el máximo poder de la inteligencia artificial y transformarla en una verdadera <span className="upsell-text-gradient-gold">máquina de resultados.</span></h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-upsell-text-muted sm:text-lg">Un método práctico para aprovechar mejor ChatGPT, organizar tus ideas, ganar claridad y transformar lo que sabes en presencia digital.</p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3 lg:justify-start">
-              <div className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3"><span className="block text-[10px] tracking-[0.16em] text-white/50 uppercase">Valor total</span><span className="text-xl font-bold text-white">US$ 37</span></div>
-              <div className="rounded-xl border border-upsell-gold/30 bg-upsell-gold/10 px-4 py-3"><span className="block text-[10px] tracking-[0.16em] text-upsell-gold uppercase">Precio especial de lanzamiento</span><span className="text-xl font-bold text-upsell-gold">US$ 9,90</span></div>
-              <div className="rounded-xl border border-upsell-success/30 bg-upsell-success/10 px-4 py-3"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Ahorro</span><span className="text-xl font-bold text-upsell-success">Más de 70%</span></div>
+            <div className="mt-6 flex flex-wrap items-end justify-center gap-4 lg:justify-start">
+              <div className="text-center lg:text-left"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Precio anterior</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 69,90</span></div>
+              <div className="text-center lg:text-left"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Precio de lanzamiento</span><span className="text-3xl font-bold text-upsell-success">US$ 9,99</span></div>
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[420px]">
@@ -336,10 +335,10 @@ export function TuGemeloDigitalPage() {
             <div className="rounded-2xl border border-upsell-gold/30 bg-upsell-gold/[0.08] p-4"><p className="font-bold text-upsell-gold">El Espejo Digital · BONO</p><p className="mt-1 text-xs text-upsell-text-muted">Bono de reflexión guiada.</p></div>
           </div>
           <div className="mt-6 rounded-2xl border border-white/10 bg-black/30 p-5 sm:p-7">
-            <p className="text-sm text-white/55">Valor del método: <span className="font-bold text-white line-through">US$ 37</span></p>
-            <p className="upsell-eyebrow mt-4 text-xs tracking-[0.22em] text-upsell-gold uppercase">Precio especial de lanzamiento</p>
-            <p className="mt-1 text-5xl font-bold text-upsell-gold sm:text-7xl">US$ 9,90</p>
-            <p className="mt-2 text-sm font-bold text-upsell-success">AHORRA MÁS DE 70%</p>
+            <p className="text-sm font-semibold text-red-400">Precio anterior</p>
+            <p className="mt-1 text-3xl font-bold text-red-400 line-through decoration-red-400 sm:text-4xl">US$ 69,90</p>
+            <p className="upsell-eyebrow mt-5 text-xs tracking-[0.22em] text-upsell-success uppercase">Precio de lanzamiento</p>
+            <p className="mt-1 text-5xl font-bold text-upsell-success sm:text-7xl">US$ 9,99</p>
             <div className="mt-6 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
             <p className="mt-3 text-xs font-semibold text-white/55">Pago único · Acceso inmediato</p>
           </div>
