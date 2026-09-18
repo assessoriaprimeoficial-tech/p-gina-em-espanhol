@@ -7,11 +7,6 @@ main > section:nth-of-type(2) .upsell-marquee img { content: normal !important; 
 main > section:nth-of-type(2) .upsell-marquee > div { width: 320px !important; }
 @media (min-width: 1280px) { main > section:nth-of-type(2) .upsell-marquee > div { width: 340px !important; } }
 
-#combo .text-upsell-success { font-size: 0 !important; line-height: 1 !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: .25rem !important; }
-#combo .text-upsell-success::before { content: "US$ 69,90"; display: block; color: #ef4444; font-size: clamp(1.05rem, 3.4vw, 1.8rem); font-weight: 900; line-height: 1; text-decoration-line: line-through; text-decoration-thickness: 3px; text-decoration-color: #ef4444; }
-#combo .text-upsell-success::after { content: "US$ 9,99"; display: block; color: #4ade80; font-size: clamp(2.2rem, 7vw, 4.5rem); font-weight: 900; line-height: .95; letter-spacing: -.03em; }
-#combo .mt-6.flex.flex-wrap { display: none !important; }
-
 /* Ordem e numeração correta dos 4 guias: 1 Mente, 2 Espejo, 3 Segundo Cerebro, 4 Gemelo */
 #oferta-completa-topo .mx-auto.mt-9.max-w-3xl.grid > div:nth-child(1), #combo .grid.gap-3 > div:nth-child(1) { order: 1; }
 #oferta-completa-topo .mx-auto.mt-9.max-w-3xl.grid > div:nth-child(4), #combo .grid.gap-3 > div:nth-child(4) { order: 2; }
@@ -39,5 +34,3 @@ main > section:nth-of-type(2) .upsell-marquee > div { width: 320px !important; }
 #oferta-completa-topo .mx-auto.mt-9.max-w-3xl.grid > div:nth-child(2) span::after, #combo .grid.gap-3 > div:nth-child(2) span::after { content: "Guia 3"; font-size: 10px; }
 #oferta-completa-topo .mx-auto.mt-9.max-w-3xl.grid > div:nth-child(3) span::after, #combo .grid.gap-3 > div:nth-child(3) span::after { content: "Guia 4"; font-size: 10px; }
 
-main > section:nth-of-type(10) h2 { font-size: 0 !important; line-height: 1.15 !important; }
-main > section:nth-of-type(10) h2::after { content: "A partir de agora, você abre o ChatGPT e a inteligência artificial já sabe como trabalhar com você."; display: block; font-size: clamp(1.9rem, 5vw, 3rem); line-height: 1.15; font-weight: 700; color: inherit; }
