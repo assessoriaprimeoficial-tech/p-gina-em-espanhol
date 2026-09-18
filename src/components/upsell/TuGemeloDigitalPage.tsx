@@ -213,14 +213,15 @@ export function TuGemeloDigitalPage() {
             <h1 className="mt-5 text-3xl font-bold tracking-[-0.02em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo</h1>
             <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">Descubre cómo extraer el máximo poder de la inteligencia artificial y transformarla en una verdadera <span className="upsell-text-gradient-gold">máquina de resultados.</span></h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-upsell-text-muted sm:text-lg">Un método práctico para aprovechar mejor ChatGPT, organizar tus ideas, ganar claridad y transformar lo que sabes en presencia digital.</p>
-            <div className="mt-6 flex flex-wrap items-end justify-center gap-4 lg:justify-start">
-              <div className="text-center lg:text-left"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Precio anterior</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 69,90</span></div>
-              <div className="text-center lg:text-left"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Precio de lanzamiento</span><span className="text-3xl font-bold text-upsell-success">US$ 9,99</span></div>
-            </div>
+            
           </div>
           <div className="relative mx-auto w-full max-w-[420px]">
             <div className="pointer-events-none absolute inset-8 rounded-full bg-upsell-blue/20 blur-[100px]" />
             <img src={comboCover.url} alt="Método Mente Expandida completo con los cuatro materiales" className="relative w-full rounded-[32px] object-cover shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]" />
+            <div className="mt-5 flex flex-wrap items-end justify-center gap-4">
+              <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Precio anterior</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 69,90</span></div>
+              <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Precio de lanzamiento</span><span className="text-3xl font-bold text-upsell-success">US$ 9,99</span></div>
+            </div>
             <div className="mt-6 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
             <p className="mt-3 text-center text-xs font-semibold text-white/55">Pago único · Acceso inmediato</p>
           </div>
