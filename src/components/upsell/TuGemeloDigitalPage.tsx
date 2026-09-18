@@ -335,7 +335,7 @@ export function TuGemeloDigitalPage() {
 
     <section className="border-y border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <TituloSecao light etiqueta="TESTIMONIOS" titulo={<>Personas que ya comenzaron a <span className="text-upsell-light-blue">aplicar el método.</span></>} />
+        <TituloSecao light etiqueta="TESTIMONIOS" titulo={<><span className="text-upsell-light-blue">Personas que ya comenzaron a aplicar el método.</span></>} />
       </div>
       <div className="upsell-marquee-mask mt-8 overflow-hidden"><div className="upsell-marquee-reverse flex w-max items-center gap-5 px-5">{[...depoimentos, ...depoimentos].map((item, index) => <DepoimentoCard key={index} imagem={item} index={index % depoimentos.length} />)}</div></div>
       <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
