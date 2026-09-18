@@ -28,7 +28,7 @@ const comboItens = [
   { nome: "Tu Mente en GPT", etiqueta: "Guía 1", desc: "Personaliza ChatGPT con tu contexto" },
   { nome: "Tu Segundo Cerebro", etiqueta: "Guía 2", desc: "Piensa con mayor claridad dentro de ChatGPT" },
   { nome: "Tu Gemelo Digital", etiqueta: "Guía 3", desc: "Transforma ideas en presencia digital" },
-  { nome: "El Espejo Digital", etiqueta: "Guía 4", desc: "Reflexión guiada con el apoyo de ChatGPT" },
+  { nome: "El Espejo Digital", etiqueta: "Bono", desc: "Reflexión guiada con el apoyo de ChatGPT" },
 ];
 
 function TypewriterWord() {
