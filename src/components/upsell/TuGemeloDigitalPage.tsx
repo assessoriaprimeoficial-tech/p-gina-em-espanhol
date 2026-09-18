@@ -218,12 +218,12 @@ export function TuGemeloDigitalPage() {
               <div className="rounded-xl border border-upsell-gold/30 bg-upsell-gold/10 px-4 py-3"><span className="block text-[10px] tracking-[0.16em] text-upsell-gold uppercase">Precio especial de lanzamiento</span><span className="text-xl font-bold text-upsell-gold">US$ 9,90</span></div>
               <div className="rounded-xl border border-upsell-success/30 bg-upsell-success/10 px-4 py-3"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Ahorro</span><span className="text-xl font-bold text-upsell-success">Más de 70%</span></div>
             </div>
-            <div className="mt-6 flex justify-center lg:justify-start"><CTA>QUERO COMEÇAR →</CTA></div>
-            <p className="mt-3 text-xs font-semibold text-white/55">US$ 9,90 · Pago único · Acceso inmediato</p>
           </div>
           <div className="relative mx-auto w-full max-w-[420px]">
             <div className="pointer-events-none absolute inset-8 rounded-full bg-upsell-blue/20 blur-[100px]" />
             <img src={comboCover.url} alt="Método Mente Expandida completo con los cuatro materiales" className="relative w-full rounded-[32px] object-cover shadow-[0_35px_100px_-35px_rgba(37,99,235,0.65)]" />
+            <div className="mt-6 flex justify-center"><CTA>QUERO COMEÇAR →</CTA></div>
+            <p className="mt-3 text-center text-xs font-semibold text-white/55">US$ 9,90 · Pago único · Acceso inmediato</p>
           </div>
         </div>
       </div>
@@ -242,6 +242,7 @@ export function TuGemeloDigitalPage() {
             [elEspejoDigitalCover, "El Espejo Digital", "Bono", "Una nueva perspectiva sobre ti."],
           ].map(([cover, nome, tag, desc]) => <article key={nome as string} className={`rounded-[26px] border p-4 text-center ${tag === "Bono" ? "border-upsell-gold/40 bg-upsell-gold/[0.08]" : "border-upsell-light-border bg-upsell-light-surface"}`}><img src={(cover as {url:string}).url} alt={`Portada ${nome}`} className="mx-auto aspect-square w-full max-w-[190px] rounded-[18px] object-cover" /><div className={`upsell-eyebrow mt-4 text-[10px] tracking-[0.18em] uppercase ${tag === "Bono" ? "text-upsell-gold" : "text-upsell-light-blue"}`}>{tag}</div><h3 className="mt-2 text-lg font-bold text-upsell-light-text">{nome}</h3><p className="mt-1 text-sm leading-6 text-upsell-light-muted">{desc}</p></article>)}
         </div>
+        <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
       </div>
     </section>
 
@@ -270,6 +271,7 @@ export function TuGemeloDigitalPage() {
             ["04", "REVELA NOVAS PERSPECTIVAS", Eye],
           ].map(([num, text, Icon]) => <div key={num as string} className="relative rounded-2xl border border-upsell-blue/25 bg-upsell-blue/[0.06] p-5"><div className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-upsell-blue/15 text-upsell-blue"><Icon className="h-5 w-5" /></div><div className="upsell-eyebrow mt-3 text-[10px] text-upsell-blue">{num}</div><p className="mt-2 text-xs font-bold leading-5 text-white">{text}</p></div>)}
         </div>
+        <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
       </div>
     </section>
 
@@ -283,6 +285,7 @@ export function TuGemeloDigitalPage() {
             ["03", "Para principiantes", "Si ya utilizas ChatGPT, puedes comenzar aunque todavía estés aprendiendo sobre IA."],
           ].map(([num, title, text]) => <article key={num} className="rounded-[24px] border border-upsell-light-border bg-upsell-light-surface p-6 text-center"><div className="upsell-eyebrow text-xs text-upsell-light-blue">{num}</div><h3 className="mt-3 text-xl font-bold text-upsell-light-text">{title}</h3><p className="mt-2 text-sm leading-6 text-upsell-light-muted">{text}</p></article>)}
         </div>
+        <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
       </div>
     </section>
 
@@ -306,6 +309,7 @@ export function TuGemeloDigitalPage() {
             {[...pilarImagens, ...pilarImagens, ...pilarImagens].map((cover, index) => <CapaCard key={index} cover={cover} nome="Método Mente Expandida" />)}
           </div>
         </div>
+        <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
       </div>
     </section>
 
@@ -314,6 +318,7 @@ export function TuGemeloDigitalPage() {
         <TituloSecao light etiqueta="TESTIMONIOS" titulo={<>Personas que ya comenzaron a <span className="text-upsell-light-blue">aplicar el método.</span></>} />
       </div>
       <div className="upsell-marquee-mask mt-8 overflow-hidden"><div className="upsell-marquee-reverse flex w-max items-center gap-5 px-5">{[...depoimentos, ...depoimentos].map((item, index) => <DepoimentoCard key={index} imagem={item} index={index % depoimentos.length} />)}</div></div>
+      <div className="mt-8 flex justify-center"><CTA>QUERO O MÉTODO →</CTA></div>
     </section>
 
     <section id="combo" className="relative border-y border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-16">
@@ -347,11 +352,12 @@ export function TuGemeloDigitalPage() {
       <div className="mx-auto max-w-4xl text-center">
         <div className="relative mx-auto grid h-48 w-48 place-items-center rounded-full border-2 border-upsell-success/50 bg-upsell-success/10 sm:h-56 sm:w-56"><div className="absolute inset-3 rounded-full border border-dashed border-upsell-success/40" /><div><BadgeCheck className="mx-auto h-9 w-9 text-upsell-success" /><div className="mt-1 text-6xl font-bold leading-none text-upsell-light-text">7</div><div className="upsell-eyebrow mt-1 text-xs tracking-[0.24em] text-upsell-light-text/70">DÍAS</div><div className="mt-2 text-[10px] font-bold tracking-[0.2em] text-upsell-success uppercase">Garantía total</div></div></div>
         <div className="mt-7"><div className="upsell-eyebrow text-xs tracking-[0.22em] text-upsell-success uppercase">GARANTÍA DE 7 DÍAS</div><h2 className="mt-3 text-3xl font-bold text-upsell-light-text sm:text-4xl">Conoce el método durante 7 días.</h2><p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-upsell-light-muted sm:text-base">Si decides que no es para ti, puedes solicitar la garantía dentro del plazo según las condiciones de la plataforma de compra.</p></div>
+        <div className="mt-7 flex justify-center"><CTA>QUERO COMEÇAR →</CTA></div>
       </div>
     </section>
 
     <section className="bg-upsell-light px-5 py-12 sm:px-6 sm:py-14">
-      <div className="mx-auto max-w-4xl"><TituloSecao light etiqueta="PREGUNTAS FRECUENTES" titulo="El último paso antes de comenzar." /><div className="mt-8 space-y-3">{perguntas.map(([pergunta, resposta]) => <details key={pergunta} className="group rounded-2xl border border-upsell-light-border bg-upsell-light-surface p-5 open:border-upsell-light-blue/40"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-upsell-light-text"><span>{pergunta}</span><ChevronDown className="h-5 w-5 shrink-0 text-upsell-light-blue transition group-open:rotate-180" /></summary><p className="mt-4 pr-6 text-sm leading-7 text-upsell-light-muted sm:text-base">{resposta}</p></details>)}</div></div>
+      <div className="mx-auto max-w-4xl"><TituloSecao light etiqueta="PREGUNTAS FRECUENTES" titulo="El último paso antes de comenzar." /><div className="mt-8 space-y-3">{perguntas.map(([pergunta, resposta]) => <details key={pergunta} className="group rounded-2xl border border-upsell-light-border bg-upsell-light-surface p-5 open:border-upsell-light-blue/40"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-upsell-light-text"><span>{pergunta}</span><ChevronDown className="h-5 w-5 shrink-0 text-upsell-light-blue transition group-open:rotate-180" /></summary><p className="mt-4 pr-6 text-sm leading-7 text-upsell-light-muted sm:text-base">{resposta}</p></details>)}</div><div className="mt-8 flex justify-center"><CTA>QUERO COMEÇAR →</CTA></div></div>
     </section>
 
     <NotificacoesVendas />
