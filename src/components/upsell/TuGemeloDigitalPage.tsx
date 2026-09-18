@@ -339,53 +339,42 @@ export function TuGemeloDigitalPage() {
       <div className="relative mx-auto max-w-5xl">
         <div className="mx-auto max-w-3xl text-center">
           <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase">
-            <Sparkles className="h-4 w-4" /> Oferta especial
+            <Sparkles className="h-4 w-4" /> Oferta por tiempo limitado
           </span>
-          <h2 className="mt-5 text-3xl font-bold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl">
-            Método Mente Expandida completo
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-upsell-text-muted sm:text-lg">
-            Todo el método en una sola oferta: una base para tu IA, guías para organizar tus ideas, presencia digital y una experiencia de reflexión como bono.
-          </p>
+          <h2 className="mt-5 text-3xl font-bold tracking-[-0.01em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-upsell-text-muted sm:text-lg">Todo el método en una sola oferta: una base para tu IA, guías para organizar tus ideas, presencia digital y una experiencia de reflexión como bono.</p>
         </div>
 
         <div className="mx-auto mt-9 max-w-4xl rounded-[32px] border border-upsell-gold/25 bg-white/[0.045] p-5 shadow-[0_35px_100px_-45px_rgba(37,99,235,0.55)] sm:p-8">
           <div className="grid gap-4 sm:grid-cols-2">
             <article className="rounded-[24px] border border-upsell-blue/20 bg-upsell-blue/[0.07] p-6">
-              <div className="mb-3 h-1 w-12 rounded-full bg-upsell-blue" />
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-upsell-blue/15 text-upsell-blue"><Brain className="h-5 w-5" /></div>
               <h3 className="text-xl font-bold text-white">Tu Mente en GPT</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">La base del método para trabajar con más contexto y claridad.</p>
+              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Producto principal y base del método.</p>
             </article>
-
             <article className="rounded-[24px] border border-upsell-blue/20 bg-upsell-blue/[0.07] p-6">
-              <div className="mb-3 h-1 w-12 rounded-full bg-upsell-blue" />
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-upsell-blue/15 text-upsell-blue"><Lightbulb className="h-5 w-5" /></div>
               <h3 className="text-xl font-bold text-white">Tu Segundo Cerebro</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Una guía complementaria para organizar ideas y transformar objetivos en acción.</p>
+              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Guía complementaria para organizar ideas y avanzar con claridad.</p>
             </article>
-
             <article className="rounded-[24px] border border-upsell-blue/20 bg-upsell-blue/[0.07] p-6">
-              <div className="mb-3 h-1 w-12 rounded-full bg-upsell-blue" />
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-upsell-blue/15 text-upsell-blue"><Video className="h-5 w-5" /></div>
               <h3 className="text-xl font-bold text-white">Tu Gemelo Digital</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Una guía complementaria para transformar ideas en contenido y presencia digital.</p>
+              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Guía complementaria para transformar ideas en contenido y presencia digital.</p>
             </article>
-
             <article className="rounded-[24px] border border-upsell-gold/30 bg-upsell-gold/[0.08] p-6">
-              <div className="mb-3 h-1 w-12 rounded-full bg-upsell-gold" />
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-upsell-gold/15 text-upsell-gold"><Eye className="h-5 w-5" /></div>
               <h3 className="text-xl font-bold text-upsell-gold">El Espejo Digital</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Bono especial para reflexionar, reconocer patrones y descubrir nuevas perspectivas.</p>
+              <p className="mt-2 text-sm leading-6 text-upsell-text-muted">Bono especial para descubrir nuevas perspectivas.</p>
             </article>
           </div>
 
-          <div className="mx-auto mt-8 max-w-xl rounded-[28px] border border-white/10 bg-black/35 p-6 text-center sm:p-8">
+          <div className="mx-auto mt-8 max-w-xl rounded-[28px] border border-upsell-gold/25 bg-black/35 p-6 text-center sm:p-8">
             <p className="text-xs font-bold tracking-[0.22em] text-red-400 uppercase">Precio anterior</p>
             <p className="mt-2 text-3xl font-bold text-red-400 line-through decoration-red-400 sm:text-4xl">US$ 69,90</p>
-
             <p className="upsell-eyebrow mt-6 text-xs tracking-[0.22em] text-upsell-success uppercase">Precio de lanzamiento</p>
             <p className="mt-2 text-5xl font-bold text-upsell-success sm:text-7xl">US$ 9,99</p>
-
-            <div className="mt-7 flex justify-center">
-              <CTA>QUIERO EMPEZAR →</CTA>
-            </div>
+            <div className="mt-7 flex justify-center"><CTA>QUIERO EMPEZAR →</CTA></div>
             <p className="mt-3 text-xs font-semibold text-white/55">Pago único · Acceso inmediato</p>
           </div>
         </div>
