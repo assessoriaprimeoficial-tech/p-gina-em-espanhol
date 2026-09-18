@@ -157,7 +157,7 @@ function CTA({ children = "QUIERO EMPEZAR →", href = "#oferta" }: { children?:
 
 function MetodoVisual() {
   return <div className="relative flex justify-center">
-    <img src={comboCover.url} alt="Combo Método Mente Expandida con las 4 guías" className="w-full max-w-[340px] object-cover" />
+    <img src={comboCover.url} alt="Combo Método Mente Expandida con las 4 guías" className="w-full max-w-[340px] rounded-[24px] object-cover" />
   </div>;
 }
 
