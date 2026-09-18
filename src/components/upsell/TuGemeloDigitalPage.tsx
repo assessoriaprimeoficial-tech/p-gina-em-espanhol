@@ -144,7 +144,7 @@ function TituloSecao({ etiqueta, titulo, light = false, children }: { etiqueta: 
   </div>;
 }
 
-function CTA({ children = "QUERO COMEÇAR →", href = "#combo" }: { children?: ReactNode; href?: string }) {
+function CTA({ children = "QUERO COMEÇAR →", href = "#oferta" }: { children?: ReactNode; href?: string }) {
   return <a href={href} className="upsell-cta inline-flex w-full max-w-[380px] items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-6 py-4 text-center text-sm tracking-wide text-white uppercase sm:gap-3 sm:px-8 sm:text-base">{children}</a>;
 }
 
@@ -169,7 +169,7 @@ function NotificacoesVendas() {
     return () => clearInterval(timer);
   }, []);
   return <div className="fixed bottom-4 left-4 z-40 hidden max-w-[320px] rounded-2xl border border-green-400/40 bg-gradient-to-r from-green-700 via-green-600 to-green-700 p-4 shadow-[0_12px_35px_-12px_rgba(34,197,94,0.75)] backdrop-blur-md sm:block">
-    <div className="flex items-center gap-3"><div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/15 text-white"><Check className="h-4 w-4" /></div><div><p className="text-xs leading-5 text-white"><span className="font-bold">{compradores[atual]}</span> adquirió el <span className="font-bold text-white">Método Mente Expandida</span></p><p className="mt-1 text-[10px] text-white/75">Hace pocos minutos</p></div></div>
+    <div className="flex items-center gap-3"><div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/15 text-white"><Check className="h-4 w-4" /></div><div><p className="text-xs leading-5 text-white"><span className="font-bold">{compradores[atual]}</span> adquirió el <span className="font-bold text-white">Combo Método Mente Expandida</span></p><p className="mt-1 text-[10px] text-white/75">Hace pocos minutos</p></div></div>
   </div>;
 }
 
