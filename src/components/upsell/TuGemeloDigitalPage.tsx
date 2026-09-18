@@ -224,8 +224,7 @@ export function TuGemeloDigitalPage() {
           <div className="text-center lg:text-left">
             <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Método Mente Expandida™</span>
             <h1 className="mt-5 text-3xl font-bold tracking-[-0.02em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida completo</h1>
-            <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">Descubre cómo extraer el máximo poder de la inteligencia artificial y transformarla en una verdadera <span className="upsell-text-gradient-gold">máquina de resultados.</span></h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-upsell-text-muted sm:text-lg">Un método práctico para aprovechar mejor ChatGPT, organizar tus ideas, ganar claridad y transformar lo que sabes en presencia digital.</p>
+            <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl">Un método práctico para aprovechar mejor ChatGPT, organizar tus ideas, ganar claridad y transformar lo que sabes en presencia digital.</h2>
             
           </div>
           <div className="relative mx-auto w-full max-w-[420px]">
