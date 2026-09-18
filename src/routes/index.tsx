@@ -1,6 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { OfferGuideFix } from "@/components/upsell/OfferGuideFix";
 import { TuGemeloDigitalPage } from "@/components/upsell/TuGemeloDigitalPage";
+
+function Page() {
+  return (
+    <>
+      <TuGemeloDigitalPage />
+      <OfferGuideFix />
+    </>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,5 +36,5 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: TuGemeloDigitalPage,
+  component: Page,
 });
