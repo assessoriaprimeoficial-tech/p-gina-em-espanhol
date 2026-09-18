@@ -255,7 +255,7 @@ export function TuGemeloDigitalPage() {
             [tuMenteEnGPTCover, "Tu Mente en GPT", "Producto principal", "La base del método."],
             [tuSegundoCerebroCover, "Tu Segundo Cerebro", "Guía complementaria", "Pensamiento e ideas con más claridad."],
             [tuGemeloDigitalCover, "Tu Gemelo Digital", "Guía complementaria", "Ideas transformadas en presencia digital."],
-            [elEspejoDigitalCover, "El Espejo Digital", "Bono", "Reflexión guiada con el apoyo de ChatGPT como bonus."],
+            [elEspejoDigitalCover, "El Espejo Digital", "Bono", "Reflexión guiada con el apoyo de ChatGPT"],
           ].map(([cover, nome, tag, desc]) => <article key={nome as string} className={`rounded-[26px] border p-4 text-center ${tag === "Bono" ? "border-upsell-gold/40 bg-upsell-gold/[0.08]" : "border-upsell-light-border bg-upsell-light-surface"}`}><img src={(cover as {url:string}).url} alt={`Portada ${nome}`} className="mx-auto aspect-square w-full max-w-[190px] rounded-[18px] object-cover" /><div className={`upsell-eyebrow mt-4 text-[10px] tracking-[0.18em] uppercase ${tag === "Bono" ? "text-upsell-gold" : "text-upsell-light-blue"}`}>{tag}</div><h3 className="mt-2 text-lg font-bold text-upsell-light-text">{nome}</h3><p className="mt-1 text-sm leading-6 text-upsell-light-muted">{desc}</p></article>)}
         </div>
         <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
