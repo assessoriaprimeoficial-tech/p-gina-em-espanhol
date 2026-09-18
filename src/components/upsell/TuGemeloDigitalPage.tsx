@@ -5,6 +5,7 @@ import tuMenteEnGPTCover from "@/assets/tu-mente-en-gpt-cover-v2.png.asset.json"
 import tuSegundoCerebroCover from "@/assets/tu-segundo-cerebro-cover-v2.png.asset.json";
 import tuGemeloDigitalCover from "@/assets/tu-gemelo-digital-cover-v2.png.asset.json";
 import elEspejoDigitalCover from "@/assets/el-espejo-digital-cover-v2.png.asset.json";
+import comboCover from "@/assets/combo-mente-expandida-novo.png.asset.json";
 import depoimento10 from "@/assets/depoimento-10.png.asset.json";
 import depoimento11 from "@/assets/depoimento-11.png.asset.json";
 import depoimento12 from "@/assets/depoimento-12.png.asset.json";
@@ -23,6 +24,12 @@ const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, dep
 const guiasEsteira = [tuMenteEnGPTCover, tuSegundoCerebroCover, tuGemeloDigitalCover, elEspejoDigitalCover];
 const faixaItens = ["MÉTODO MENTE EXPANDIDA™", "GUÍA PRINCIPAL + BONOS GRATIS", "PAGO ÚNICO", "ACCESO INMEDIATO", "GARANTÍA DE 7 DÍAS", "TU IA, A TU MANERA"];
 const typewriterWords = ["CREAR.", "APRENDER.", "PRODUCIR.", "CONQUISTAR."];
+const comboItens = [
+  { nome: "Tu Mente en GPT", etiqueta: "Guía 1", desc: "Personaliza ChatGPT con tu contexto" },
+  { nome: "Tu Segundo Cerebro", etiqueta: "Guía 2", desc: "Piensa con mayor claridad dentro de ChatGPT" },
+  { nome: "Tu Gemelo Digital", etiqueta: "Guía 3", desc: "Transforma ideas en presencia digital" },
+  { nome: "El Espejo Digital", etiqueta: "Guía 4", desc: "Reflexión guiada con el apoyo de ChatGPT" },
+];
 
 function TypewriterWord() {
   const [wordIndex, setWordIndex] = useState(0);
