@@ -333,7 +333,7 @@ export function TuGemeloDigitalPage() {
       </div>
     </section>
 
-    <section className="bg-upsell-light-alt px-5 py-12 sm:px-6 sm:py-16">
+    <section className="border-y border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-7xl">
         <TituloSecao light etiqueta="TESTIMONIOS" titulo={<>Personas que ya comenzaron a <span className="text-upsell-light-blue">aplicar el método.</span></>} />
       </div>
