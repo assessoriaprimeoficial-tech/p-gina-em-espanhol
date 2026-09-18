@@ -83,6 +83,7 @@ const beneficiosEspejo = [
   "Reflexionar sobre comportamientos y decisiones",
   "Obtener nuevas perspectivas sobre tu forma de actuar",
 ];
+const recursos = ["Perfil Maestro", "Prompt Maestro", "Comandos de Alto Valor", "Sistema de Decisiones", "Planes de Acción", "Análisis de Riesgos", "Avatar con IA", "Voz con IA", "Guiones para Video", "Prompts de Reflexión", "Mapa de Fortalezas", "Preguntas de Evolución"];
 const resultados = [
   { icon: Brain, title: "Una IA que te conoce", text: "Menos respuestas genéricas y más contexto para trabajar desde el lugar correcto." },
   { icon: Lightbulb, title: "Ideas que se desarrollan", text: "Convierte pensamientos dispersos en posibilidades, estructuras y próximos pasos." },
@@ -297,28 +298,23 @@ export function TuGemeloDigitalPage() {
       </div>
     </section>
 
-    <section className="bg-upsell-light px-5 py-14 sm:px-6 sm:py-20">
-      <div className="mx-auto max-w-6xl">
-        <TituloSecao light etiqueta="RECURSOS" titulo={<>Todo organizado para que puedas <span className="text-upsell-light-blue">aplicar el método.</span></>}>
+    <section className="py-14 sm:py-20">
+      <div className="px-5 sm:px-6">
+        <TituloSecao etiqueta="RECURSOS" titulo={<>Todo organizado para que puedas <span className="upsell-text-gradient-blue">aplicar el método.</span></>}>
           12 recursos listos para usar, creados para que apliques el método sin teoría innecesaria:
         </TituloSecao>
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            ["01", "Perfil Maestro", "Una estructura lista para organizar tu contexto y trabajar mejor con la IA."],
-            ["02", "Prompt Maestro", "Un recurso central para orientar tus conversaciones y obtener respuestas más alineadas."],
-            ["03", "Comandos de Alto Valor", "Recursos prácticos para sacar más provecho de la IA en diferentes situaciones."],
-          ].map(([num, title, text]) => (
-            <article key={num} className="group relative overflow-hidden rounded-[26px] border border-upsell-light-border bg-upsell-light-surface p-6 text-center transition-transform duration-300 hover:-translate-y-1">
-              <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl border border-upsell-light-blue/25 bg-upsell-light-blue/10 text-upsell-light-blue">
-                <span className="text-sm font-extrabold">{num}</span>
-              </div>
-              <h3 className="mt-4 text-lg font-bold text-upsell-light-text sm:text-xl">{title}</h3>
-              <p className="mt-2 text-sm leading-6 text-upsell-light-muted">{text}</p>
-            </article>
+      </div>
+      <div className="upsell-marquee-mask mt-12 overflow-hidden">
+        <div className="upsell-marquee-reverse flex w-max gap-3 px-4">
+          {[...recursos, ...recursos].map((recurso, index) => (
+            <div key={`${recurso}-${index}`} className="flex min-w-[230px] items-center gap-3 rounded-2xl bg-white/[0.035] px-5 py-4">
+              <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-upsell-blue/10 text-upsell-blue"><Check className="h-4 w-4" /></div>
+              <span className="text-sm font-semibold text-white/85">{recurso}</span>
+            </div>
           ))}
         </div>
-        <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
       </div>
+      <div className="mt-10 flex justify-center px-5 sm:px-6"><CTA>QUIERO ACCEDER</CTA></div>
     </section>
 
     <section className="px-5 py-12 sm:px-6 sm:py-16">
