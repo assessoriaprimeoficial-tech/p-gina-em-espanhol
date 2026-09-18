@@ -293,6 +293,22 @@ export function TuGemeloDigitalPage() {
       </div>
     </section>
 
+    <section className="relative overflow-hidden border-y border-white/10 bg-black/25 px-5 py-12 sm:px-6 sm:py-14">
+      <MatrixRain />
+      <div className="relative mx-auto max-w-7xl text-center">
+        <div className="mx-auto max-w-3xl">
+          <div className="upsell-eyebrow mb-4 text-xs tracking-[0.28em] text-upsell-gold uppercase">MIRA EL MÉTODO COBRAR VIDA</div>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">Veja o método ganhar vida.</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-upsell-text-muted sm:text-base">Conheça os materiais que fazem parte do Método Mente Expandida e visualize a experiência completa.</p>
+        </div>
+        <div className="upsell-marquee-mask mt-8 overflow-hidden">
+          <div className="upsell-marquee flex w-max items-center gap-5 px-5">
+            {[...pilarImagens, ...pilarImagens, ...pilarImagens].map((cover, index) => <CapaCard key={index} cover={cover} nome="Método Mente Expandida" />)}
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section className="bg-upsell-light-alt px-5 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-7xl">
         <TituloSecao light etiqueta="TESTIMONIOS" titulo={<>Personas que ya comenzaron a <span className="text-upsell-light-blue">aplicar el método.</span></>} />
