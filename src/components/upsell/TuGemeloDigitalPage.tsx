@@ -299,15 +299,14 @@ export function TuGemeloDigitalPage() {
 
     <section className="bg-upsell-light px-5 py-14 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-6xl">
-        <TituloSecao light etiqueta="TUDO ORGANIZADO PARA APLICAR" titulo={<>Um método claro para <span className="text-upsell-light-blue">pensar, criar e avançar.</span></>}>
-          Cada etapa foi organizada para que você consiga aplicar o Método Mente Expandida de forma simples, prática e progressiva — sem se perder no caminho.
+        <TituloSecao light etiqueta="RECURSOS" titulo={<>Todo organizado para que puedas <span className="text-upsell-light-blue">aplicar el método.</span></>}>
+          12 recursos listos para usar, creados para que apliques el método sin teoría innecesaria:
         </TituloSecao>
-        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            ["01", "CONHEÇA SEU CONTEXTO", "Comece entendendo melhor sua realidade, seus objetivos e a forma como você quer trabalhar com a IA."],
-            ["02", "ORGANIZE SUAS IDEIAS", "Transforme pensamentos soltos em estruturas mais claras, possibilidades e próximos passos."],
-            ["03", "TRANSFORME EM AÇÃO", "Leve suas ideias para conteúdos, projetos e decisões com muito mais facilidade."],
-            ["04", "EXPANDA SUAS POSSIBILIDADES", "Use novas perspectivas para enxergar oportunidades, melhorar escolhas e continuar evoluindo."],
+            ["01", "Perfil Maestro", "Una estructura lista para organizar tu contexto y trabajar mejor con la IA."],
+            ["02", "Prompt Maestro", "Un recurso central para orientar tus conversaciones y obtener respuestas más alineadas."],
+            ["03", "Comandos de Alto Valor", "Recursos prácticos para sacar más provecho de la IA en diferentes situaciones."],
           ].map(([num, title, text]) => (
             <article key={num} className="group relative overflow-hidden rounded-[26px] border border-upsell-light-border bg-upsell-light-surface p-6 text-center transition-transform duration-300 hover:-translate-y-1">
               <div className="mx-auto grid h-12 w-12 place-items-center rounded-2xl border border-upsell-light-blue/25 bg-upsell-light-blue/10 text-upsell-light-blue">
@@ -318,28 +317,8 @@ export function TuGemeloDigitalPage() {
             </article>
           ))}
         </div>
-        <div className="mt-8 rounded-[28px] border border-upsell-light-border bg-white/70 px-5 py-6 text-center shadow-sm sm:px-8">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-upsell-light-blue">APLICAÇÃO SIMPLES E PROGRESSIVA</p>
-          <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-upsell-light-muted sm:text-base">
-            Você não precisa dominar inteligência artificial para começar. O método organiza a experiência em etapas para facilitar sua evolução.
-          </p>
-        </div>
+        <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
       </div>
-      <div className="relative mt-9 overflow-hidden border-y border-upsell-light-border bg-white/80 py-3">
-        <div className="flex w-max animate-[marquee_28s_linear_infinite] gap-3 whitespace-nowrap px-3">
-          <div className="flex gap-3">
-            {["APLICAR O MÉTODO", "ORGANIZAR IDEIAS", "GANHAR CLAREZA", "CRIAR CONTEÚDO", "TOMAR DECISÕES", "TRANSFORMAR IDEIAS", "AVANÇAR COM MAIS FACILIDADE", "EXPANDIR POSSIBILIDADES"].map((item) => (
-              <span key={item} className="rounded-full border border-upsell-light-blue/25 bg-upsell-light-blue/10 px-4 py-2 text-xs font-bold tracking-wide text-upsell-light-blue sm:text-sm">{item}</span>
-            ))}
-          </div>
-          <div className="flex gap-3" aria-hidden="true">
-            {["APLICAR O MÉTODO", "ORGANIZAR IDEIAS", "GANHAR CLAREZA", "CRIAR CONTEÚDO", "TOMAR DECISÕES", "TRANSFORMAR IDEIAS", "AVANÇAR COM MAIS FACILIDADE", "EXPANDIR POSSIBILIDADES"].map((item) => (
-              <span key={item} className="rounded-full border border-upsell-light-blue/25 bg-upsell-light-blue/10 px-4 py-2 text-xs font-bold tracking-wide text-upsell-light-blue sm:text-sm">{item}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
     </section>
 
     <section className="px-5 py-12 sm:px-6 sm:py-16">
