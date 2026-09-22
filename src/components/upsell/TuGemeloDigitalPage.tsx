@@ -157,7 +157,7 @@ function CTA({ children = "QUIERO EMPEZAR →", href = "#oferta" }: { children?:
 
 function MetodoVisual() {
   return <div className="relative flex justify-center">
-    <img src={comboCover.url} alt="Combo Método Mente Expandida con las 4 guías" className="w-full max-w-[340px] rounded-[24px] object-cover" />
+    <img src={comboCover.url} alt="Combo Método Mente Expandida con las 4 guías" className="w-full max-w-[400px] rounded-[24px] object-cover" />
   </div>;
 }
 
@@ -230,7 +230,7 @@ export function TuGemeloDigitalPage() {
             <p className="mt-4 text-base leading-7 text-white/80 sm:text-lg">Crea tu propio GPT personalizado con tu contexto, tu estilo y tus objetivos para que la IA trabaje mucho más alineada contigo desde el inicio. Y descubre cómo llevarla más allá: úsala como tu segundo cerebro y transforma tus ideas en contenido, incluso en videos sin tener que grabarte cada vez.</p>
             
           </div>
-          <div className="relative mx-auto w-full max-w-[420px]">
+          <div className="relative mx-auto w-full max-w-[460px]">
             <div className="mb-5 flex flex-wrap items-end justify-center gap-4">
               <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-red-400 uppercase">Precio normal</span><span className="text-2xl font-bold text-red-400 line-through decoration-red-400">US$ 69,90</span></div>
               <div className="text-center"><span className="block text-[10px] tracking-[0.16em] text-upsell-success uppercase">Oferta por tiempo limitado</span><span className="text-3xl font-bold text-upsell-success">US$ 9,99</span></div>
