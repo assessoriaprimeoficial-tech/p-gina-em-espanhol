@@ -179,21 +179,30 @@ function GuiasEsteira() {
 const compradores = ["Mariana S.", "Carlos P.", "Fernanda L.", "João M.", "Ana Paula R.", "Ricardo T.", "Camila V.", "Diego A.", "Patrícia G."];
 function NotificacoesVendas() {
   const [atual, setAtual] = useState(0);
-  const [visivel, setVisivel] = useState(true);
+  const [visivel, setVisivel] = useState(false);
 
   useEffect(() => {
     let ocultar: ReturnType<typeof setTimeout>;
     let proxima: ReturnType<typeof setTimeout>;
 
     const iniciarCiclo = () => {
-      ocultar = setTimeout(() => {
-        setVisivel(false);
-        proxima = setTimeout(() => {
-          setAtual((value) => (value + 1) % compradores.length);
-          setVisivel(true);
-          iniciarCiclo();
-        }, 15000);
-      }, 7000);
+      proxima = setTimeout(() => {
+        setVisivel(true);
+
+        ocultar = setTimeout(() => {
+          setVisivel(false);
+
+          proxima = setTimeout(() => {
+            setAtual((value) => (value + 1) % compradores.length);
+            setVisivel(true);
+
+            ocultar = setTimeout(() => {
+              setVisivel(false);
+              iniciarCiclo();
+            }, 5000);
+          }, 5000);
+        }, 5000);
+      }, 5000);
     };
 
     iniciarCiclo();
