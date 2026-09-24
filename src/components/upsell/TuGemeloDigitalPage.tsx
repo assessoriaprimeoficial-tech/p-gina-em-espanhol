@@ -324,9 +324,9 @@ export function TuGemeloDigitalPage() {
       <MatrixRain />
       <div className="relative mx-auto max-w-7xl text-center">
         <div className="mx-auto max-w-3xl">
-          <div className="upsell-eyebrow mb-4 text-xs tracking-[0.28em] text-upsell-gold uppercase">MIRA CÓMO COBRA VIDA EL MÉTODO</div>
-          <h2 className="text-3xl font-bold text-white sm:text-4xl">Mira el método cobrar vida.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-upsell-text-muted sm:text-base">Conoce los materiales que forman parte del Método Mente Expandida y visualiza la experiencia completa.</p>
+          <div className="upsell-eyebrow mb-4 text-xs tracking-[0.28em] text-upsell-gold uppercase">EL MÉTODO VA CONTIGO</div>
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">Tu próxima gran idea puede comenzar desde donde estés.</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-upsell-text-muted sm:text-base">Con el Método Mente Expandida en tus manos, tendrás una guía clara para pensar mejor, crear con libertad y transformar tus ideas en acción, a tu ritmo y de forma sencilla.</p>
         </div>
         <div className="upsell-marquee-mask mt-8 overflow-hidden">
           <div className="upsell-marquee flex w-max items-center gap-5 px-5">
