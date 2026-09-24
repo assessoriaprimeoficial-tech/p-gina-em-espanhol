@@ -297,7 +297,7 @@ export function TuGemeloDigitalPage() {
     <section className="py-14 sm:py-20">
       <div className="px-5 sm:px-6">
         <TituloSecao etiqueta="RECURSOS" titulo={<>Todo organizado para que puedas <span className="upsell-text-gradient-blue">aplicar el método.</span></>}>
-          12 recursos listos para usar, creados para que apliques el método sin teoría innecesaria:
+          Recursos prácticos, comandos premium y herramientas listas para ayudarte a pasar de la idea a la acción desde el primer día.
         </TituloSecao>
       </div>
       <div className="upsell-marquee-mask mt-12 overflow-hidden">
