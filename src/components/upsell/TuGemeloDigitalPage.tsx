@@ -252,13 +252,13 @@ export function TuGemeloDigitalPage() {
 
     <section className="bg-upsell-light px-5 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <TituloSecao light etiqueta="INCLUYE EL MÉTODO COMPLETO" titulo={<>Cuatro materiales que se complementan <span className="text-upsell-light-blue">en una sola experiencia.</span></>}>El método reúne un producto principal, dos guías complementarias y un bono especial para acompañarte desde el contexto y el pensamiento hasta la presencia digital y las nuevas perspectivas.</TituloSecao>
+        <TituloSecao light etiqueta="INCLUYE EL MÉTODO COMPLETO" titulo={<>CUATRO MATERIALES. UN SOLO MÉTODO PARA QUE LA IA TRABAJE A TU FAVOR COMO NUNCA ANTES</>} />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            [tuMenteEnGPTCover, "Tu Mente en GPT", "Producto principal", "La base del método."],
-            [tuSegundoCerebroCover, "Tu Segundo Cerebro", "Guía complementaria", "Pensamiento e ideas con más claridad."],
-            [tuGemeloDigitalCover, "Tu Gemelo Digital", "Guía complementaria", "Ideas transformadas en presencia digital."],
-            [elEspejoDigitalCover, "Bono", "", "Reflexión guiada con el apoyo de ChatGPT"],
+            [tuMenteEnGPTCover, "Tu Mente en GPT", "Guía 1", "Tu IA personalizada con tu contexto, tu identidad, tu voz y tus objetivos."],
+            [tuSegundoCerebroCover, "Tu Segundo Cerebro", "Guía 2", "Comandos premium para organizar ideas, ampliar posibilidades y decidir con claridad."],
+            [tuGemeloDigitalCover, "Tu Gemelo Digital", "Guía 3", "Tu avatar con imagen y voz para crear videos sin grabarte cada vez."],
+            [elEspejoDigitalCover, "El Espejo Digital", "Bono", "Nuevas perspectivas sobre tus patrones, fortalezas y forma de pensar."],
           ].map(([cover, nome, tag, desc]) => <a href={nome === "Tu Mente en GPT" ? "#tu-mente-en-gpt" : nome === "Tu Segundo Cerebro" ? "#tu-segundo-cerebro" : nome === "Tu Gemelo Digital" ? "#tu-gemelo-digital" : "#el-espejo-digital"} key={nome as string} className={`rounded-[26px] border p-4 text-center ${tag === "Bono" ? "border-upsell-gold/40 bg-upsell-gold/[0.08]" : "border-upsell-light-border bg-upsell-light-surface"}`}><img src={(cover as {url:string}).url} alt={`Portada ${nome}`} className="mx-auto aspect-square w-full max-w-[190px] rounded-[18px] object-cover" /><div className={`upsell-eyebrow mt-4 text-[10px] tracking-[0.18em] uppercase ${tag === "Bono" ? "text-upsell-gold" : "text-upsell-light-blue"}`}>{tag}</div><h3 className="mt-2 flex items-center justify-center gap-2 text-lg font-bold text-upsell-light-text">{nome}</h3><p className="mt-1 text-sm leading-6 text-upsell-light-muted">{desc}</p></a>)}
         </div>
         <div className="mt-8 flex justify-center"><CTA>QUIERO EL MÉTODO →</CTA></div>
