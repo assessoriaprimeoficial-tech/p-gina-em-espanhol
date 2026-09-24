@@ -315,7 +315,7 @@ export function TuGemeloDigitalPage() {
 
     <section className="px-5 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto max-w-7xl">
-        <TituloSecao etiqueta="BENEFICIOS Y RESULTADOS" titulo={<>Lo que puede cambiar cuando <span className="upsell-text-gradient-blue">aplicas el método.</span></>}>Resultados prácticos para organizar mejor tu relación con la IA, desarrollar ideas y llevarlas a la acción.</TituloSecao>
+        <TituloSecao etiqueta="BENEFICIOS Y RESULTADOS" titulo={<>Más claridad. Más velocidad. Más libertad para crear.</>}>Una forma más inteligente y personal de pensar, decidir, crear y convertir tus ideas en resultados.</TituloSecao>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{resultados.map(({ icon: Icon, title, text }) => <article key={title} className="rounded-[24px] border border-white/10 bg-white/[0.035] p-6 text-center transition-transform duration-300 hover:-translate-y-1"><div className="mx-auto grid h-11 w-11 place-items-center rounded-xl bg-upsell-blue/10 text-upsell-blue"><Icon className="h-5 w-5" /></div><h3 className="mt-4 text-lg font-bold text-white">{title}</h3><p className="mt-2 text-sm leading-6 text-upsell-text-muted">{text}</p></article>)}</div>
       </div>
     </section>
