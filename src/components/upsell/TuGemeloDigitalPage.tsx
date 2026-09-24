@@ -226,7 +226,7 @@ export function TuGemeloDigitalPage() {
           <div className="text-center lg:text-left">
             <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Método Mente Expandida™</span>
             <h1 className="mt-5 text-3xl font-bold tracking-[-0.02em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida</h1>
-            <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl"><span className="block">¿Cansado de explicarle a ChatGPT quién eres una y otra vez?</span></h2>
+            <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl"><span className="block">HAZ QUE LA IA TE CONOZCA, PIENSE CONTIGO Y TRABAJE A TU FAVOR</span></h2>
             <p className="mt-4 text-base leading-7 text-white/80 sm:text-lg">Crea tu propio GPT personalizado con tu contexto, tu estilo y tus objetivos para que la IA trabaje mucho más alineada contigo desde el inicio. Y descubre cómo llevarla más allá: úsala como tu segundo cerebro y transforma tus ideas en contenido, incluso en videos sin tener que grabarte cada vez.</p>
             
           </div>
