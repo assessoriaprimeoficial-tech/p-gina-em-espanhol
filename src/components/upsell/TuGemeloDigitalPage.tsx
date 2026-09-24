@@ -179,10 +179,32 @@ function GuiasEsteira() {
 const compradores = ["Mariana S.", "Carlos P.", "Fernanda L.", "João M.", "Ana Paula R.", "Ricardo T.", "Camila V.", "Diego A.", "Patrícia G."];
 function NotificacoesVendas() {
   const [atual, setAtual] = useState(0);
+  const [visivel, setVisivel] = useState(true);
+
   useEffect(() => {
-    const timer = setInterval(() => setAtual((value) => (value + 1) % compradores.length), 20000);
-    return () => clearInterval(timer);
+    let ocultar: ReturnType<typeof setTimeout>;
+    let proxima: ReturnType<typeof setTimeout>;
+
+    const iniciarCiclo = () => {
+      ocultar = setTimeout(() => {
+        setVisivel(false);
+        proxima = setTimeout(() => {
+          setAtual((value) => (value + 1) % compradores.length);
+          setVisivel(true);
+          iniciarCiclo();
+        }, 15000);
+      }, 7000);
+    };
+
+    iniciarCiclo();
+    return () => {
+      clearTimeout(ocultar);
+      clearTimeout(proxima);
+    };
   }, []);
+
+  if (!visivel) return null;
+
   return <div className="fixed bottom-4 left-4 z-40 hidden max-w-[320px] rounded-2xl border border-green-400/40 bg-gradient-to-r from-green-700 via-green-600 to-green-700 p-4 shadow-[0_12px_35px_-12px_rgba(34,197,94,0.75)] backdrop-blur-md sm:block">
     <div className="flex items-center gap-3"><div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white/15 text-white"><Check className="h-4 w-4" /></div><div><p className="text-xs leading-5 text-white"><span className="font-bold">{compradores[atual]}</span> adquirió el <span className="font-bold text-white">Combo Método Mente Expandida</span></p><p className="mt-1 text-[10px] text-white/75">Hace pocos minutos</p></div></div>
   </div>;
