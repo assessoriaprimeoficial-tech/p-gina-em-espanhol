@@ -285,7 +285,7 @@ export function TuGemeloDigitalPage() {
       <div className="mx-auto max-w-7xl">
         <TituloSecao light etiqueta="INCLUYE EL MÉTODO COMPLETO" titulo={<>TODO LO QUE NECESITAS PARA HACER QUE LA IA TRABAJE REALMENTE A TU FAVOR.</>} />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
+          {([
             [tuMenteEnGPTCover, "Tu Mente en GPT", "Guía 1", "Tu IA personalizada con tu contexto, tu identidad, tu voz y tus objetivos."],
             [tuSegundoCerebroCover, "Tu Segundo Cerebro", "Guía 2", "Comandos premium para organizar ideas, ampliar posibilidades y decidir con claridad."],
             [tuGemeloDigitalCover, "Tu Gemelo Digital", "Guía 3", "Tu avatar con imagen y voz para crear videos sin grabarte cada vez."],
@@ -314,7 +314,7 @@ export function TuGemeloDigitalPage() {
         <div className="upsell-eyebrow text-xs tracking-[0.26em] text-upsell-gold uppercase">LA CONEXIÓN DEL MÉTODO</div>
         <h2 className="mt-4 text-2xl font-bold text-white sm:text-4xl">De conocerte a ayudarte a pensar, crear y ver nuevas posibilidades.</h2>
         <div className="mt-8 grid gap-3 sm:grid-cols-4">
-          {[
+          {([
             ["01", "LA IA TE CONOCE", Brain],
             ["02", "TE AYUDA A PENSAR", Lightbulb],
             ["03", "TRANSFORMA IDEAS EN PRESENCIA", Video],
