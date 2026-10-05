@@ -22,6 +22,7 @@ import metodoNovo44 from "@/assets/metodo-novo-44.png.asset.json";
 const pilarImagens = [metodoNovo39, metodoNovo40, metodoNovo41, metodoNovo42, metodoNovo43, metodoNovo44];
 const depoimentos = [depoimento10, depoimento11, depoimento12, depoimento13, depoimento14, depoimento15];
 const guiasEsteira = [tuMenteEnGPTCover, tuSegundoCerebroCover, tuGemeloDigitalCover, elEspejoDigitalCover];
+const checkoutUrl = "https://pay.hotmart.com/V107688745A?off=tp51pr0r&checkoutMode=10";
 const faixaItens = ["MÉTODO MENTE EXPANDIDA™", "GUÍA PRINCIPAL + BONOS GRATIS", "PAGO ÚNICO", "ACCESO INMEDIATO", "GARANTÍA DE 7 DÍAS", "TU IA, A TU MANERA"];
 const typewriterWords = ["CREAR.", "APRENDER.", "PRODUCIR.", "CONQUISTAR."];
 const comboItens = [
@@ -151,7 +152,7 @@ function TituloSecao({ etiqueta, titulo, light = false, children }: { etiqueta: 
   </div>;
 }
 
-function CTA({ children = "QUIERO EMPEZAR →", href = "#oferta" }: { children?: ReactNode; href?: string }) {
+function CTA({ children = "QUIERO EMPEZAR →", href = checkoutUrl }: { children?: ReactNode; href?: string }) {
   return <a href={href} className="upsell-cta inline-flex w-full max-w-[380px] items-center justify-center gap-2 whitespace-nowrap rounded-2xl px-6 py-4 text-center text-sm tracking-wide text-white uppercase sm:gap-3 sm:px-8 sm:text-base">{children}</a>;
 }
 
