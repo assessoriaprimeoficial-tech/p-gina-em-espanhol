@@ -257,8 +257,10 @@ export function TuGemeloDigitalPage() {
           <div className="text-center lg:text-left">
             <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Método Mente Expandida™</span>
             <h1 className="mt-5 text-3xl font-bold tracking-[-0.02em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida</h1>
-            <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl"><span className="block">HAZ QUE LA IA TE CONOZCA, PIENSE CONTIGO Y TRABAJE A TU FAVOR</span></h2>
-            <p className="mt-4 text-base leading-7 text-white/80 sm:text-lg">Ya tienes acceso a una de las tecnologías más poderosas de nuestro tiempo. Ahora aprende a utilizar todo su potencial con tu contexto, tu identidad y tus objetivos. El Método Mente Expandida te enseña, paso a paso, a crear una IA personalizada que comprende cómo piensas, desarrolla tus ideas, organiza tus pensamientos y transforma lo que imaginas en contenido y acción. Todo de forma rápida, sencilla y aplicable desde el primer día, incluso si todavía utilizas la inteligencia artificial de manera básica.</p>
+            <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl"><span className="block">CREES QUE YA SABES USAR LA IA… HASTA QUE DESCUBRES TODO LO QUE TODAVÍA NO ESTÁS APROVECHANDO.</span></h2>
+            <p className="mt-4 text-base leading-7 text-white/80 sm:text-lg">El Método Mente Expandida te enseña, paso a paso, de forma muy fácil y directa al grano, a transformar tus conversaciones con IA en una experiencia completamente diferente: más personalizada, más inteligente y mucho más útil.</p>
+            <p className="mt-4 text-base leading-7 text-white/80 sm:text-lg">Descubre cómo hacer que la IA entienda tu forma de pensar, te ayude a ver lo que antes no veías, amplíe tus ideas y transforme la manera en que desarrollas tus proyectos y creas contenido.</p>
+            <p className="mt-4 text-base leading-7 text-white/80 sm:text-lg">Sin ser experto. Sin complicaciones. Sin perder horas probando prompts al azar.</p>
             
           </div>
           <div className="relative mx-auto w-full max-w-[550px]">
