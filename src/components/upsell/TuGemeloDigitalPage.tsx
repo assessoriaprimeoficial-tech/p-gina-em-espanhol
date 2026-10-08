@@ -253,8 +253,8 @@ export function TuGemeloDigitalPage() {
       <MatrixRain />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-upsell-gold/10 blur-[150px]" />
       <div className="relative mx-auto max-w-6xl">
-        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-12">
-          <div className="text-center lg:text-left">
+        <div className="grid items-center gap-8 md:grid-cols-[1.05fr_.95fr] lg:gap-12">
+          <div className="text-center md:text-left">
             <span className="upsell-eyebrow inline-flex items-center gap-2 rounded-full border border-upsell-gold/30 bg-upsell-gold/10 px-5 py-2 text-xs tracking-[0.18em] text-upsell-gold uppercase"><Sparkles className="h-4 w-4" /> Método Mente Expandida™</span>
             <h1 className="mt-5 text-3xl font-bold tracking-[-0.02em] text-white sm:text-4xl md:text-5xl">Método Mente Expandida</h1>
             <h2 className="mt-3 text-xl font-semibold text-white/90 sm:text-2xl"><span className="block">CREES QUE YA SABES USAR LA IA… HASTA QUE DESCUBRES TODO LO QUE TODAVÍA NO ESTÁS APROVECHANDO.</span></h2>
